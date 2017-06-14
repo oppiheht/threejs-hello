@@ -12,10 +12,17 @@ var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-var rackMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+let colorCodes = ['0', '2', '4', '6', '8', 'A', 'C', 'E']
+function randomColor() {
+  let r = colorCodes[Math.floor(colorCodes.length * Math.random())]; 
+  let g = colorCodes[Math.floor(colorCodes.length * Math.random())]; 
+  let b = colorCodes[Math.floor(colorCodes.length * Math.random())]; 
+  return '#'+r+g+b;
+}
 
 racks.forEach(function(rack, index) {
   let rackGeom = new THREE.BoxGeometry(rack.length, 2000, rack.depth);
+  let rackMaterial = new THREE.MeshBasicMaterial({ color: randomColor() });
   let rackMesh = new THREE.Mesh(rackGeom, rackMaterial);
   rackMesh.position.x = rack.origin[0];
   rackMesh.position.z = rack.origin[1];
