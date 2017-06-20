@@ -9,8 +9,9 @@ camera.position.set(0, 0, 100);
 camera.lookAt(new THREE.Vector3(0, 0, 0));
 
 var renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(window.innerWidth - 3, window.innerHeight - 3);
 document.body.appendChild(renderer.domElement);
+var controls = new THREE.OrbitControls(camera);
 
 let colorCodes = ['0', '2', '4', '6', '8', 'A', 'C', 'E']
 function randomColor() {
@@ -31,39 +32,8 @@ racks.forEach(function(rack, index) {
 
 var render = function () {
   requestAnimationFrame(render);
-
+  controls.update();
   renderer.render(scene, camera);
 };
 
 render();
-
-document.onkeydown = checkKey;
-
-function checkKey(e) {
-  e = e || window.event;
-  if (e.key == 'w') {
-    camera.translateZ(-1000);
-  }
-  if (e.key == 's') {
-    camera.translateZ(1000);
-  }
-  if (e.key == 'a') {
-    camera.rotateY(.1);
-  }
-  if (e.key == 'd') {
-    camera.rotateY(-.1);
-  }
-  if (e.key == 'q') {
-    camera.translateX(-1000);
-  }
-  if (e.key == 'e') {
-    camera.translateX(1000);
-  }
-  if (e.key == 'z') {
-    camera.rotateX(.1);
-  }
-  if (e.key == 'c') {
-    camera.rotateX(-.1);
-  }
-  camera.updateProjectionMatrix();
-}
