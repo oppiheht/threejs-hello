@@ -1,6 +1,5 @@
 $.ajaxSetup( { "async": false } );
 let racks = $.getJSON('js/map.json').responseJSON; 
-console.log(racks[0]);
 
 var scene = new THREE.Scene();
 
@@ -21,12 +20,15 @@ function randomColor() {
   return '#'+r+g+b;
 }
 
+let RACK_HEIGHT = 2000;
 racks.forEach(function(rack, index) {
-  let rackGeom = new THREE.BoxGeometry(rack.length, 2000, rack.depth);
+  let rackGeom = new THREE.BoxGeometry(rack.length, RACK_HEIGHT, rack.depth);
+  rackGeom.applyMatrix( new THREE.Matrix4().makeTranslation( rack.length / 2, RACK_HEIGHT / 2, rack.depth / 2));
   let rackMaterial = new THREE.MeshBasicMaterial({ color: randomColor() });
   let rackMesh = new THREE.Mesh(rackGeom, rackMaterial);
   rackMesh.position.x = rack.origin[0];
   rackMesh.position.z = rack.origin[1];
+  rackMesh.rotation.y = (rack.angle * Math.PI / 180);
   scene.add(rackMesh);
 });
 
