@@ -1,5 +1,5 @@
 $.ajaxSetup( { "async": false } );
-let racks = $.getJSON('js/map.json').responseJSON; 
+let racks = $.getJSON('js/map2.json').responseJSON; 
 let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 10, 100000);
 let gui = new dat.GUI();
@@ -16,6 +16,8 @@ renderer.setSize(window.innerWidth - 3, window.innerHeight - 3);
 document.body.appendChild(renderer.domElement);
 let controls = new THREE.OrbitControls(camera);
 
+scene.add(new THREE.AmbientLight(0x404040));
+
 let colorCodes = ['0', '2', '4', '6', '8', 'A', 'C', 'E']
 function randomColor() {
   let r = colorCodes[Math.floor(colorCodes.length * Math.random())]; 
@@ -26,7 +28,7 @@ function randomColor() {
   
 let RACK_HEIGHT = 2000;
 racks.forEach(function(rack, index) {
-  let rackGeom = new THREE.BoxGeometry(rack.length, RACK_HEIGHT, rack.depth);
+  let rackGeom = new THREE.BoxBufferGeometry(rack.length, RACK_HEIGHT, rack.depth);
   rackGeom.applyMatrix( new THREE.Matrix4().makeTranslation( rack.length / 2, RACK_HEIGHT / 2, rack.depth / 2));
   let rackMaterial = new THREE.MeshBasicMaterial({ color: randomColor() });
   let rackMesh = new THREE.Mesh(rackGeom, rackMaterial);
@@ -37,7 +39,7 @@ racks.forEach(function(rack, index) {
 });
 
 let WAREHOUSE_SIZE = 100000;
-let FLOOR_CHECKER_SIZE = 1000;
+let FLOOR_CHECKER_SIZE = 100000;
 let segments = WAREHOUSE_SIZE / FLOOR_CHECKER_SIZE;
 let materials = [new THREE.MeshBasicMaterial({ color: 0x666666}), new THREE.MeshBasicMaterial({ color: 0x777777})];
 let floorGeom = new THREE.PlaneGeometry(WAREHOUSE_SIZE, WAREHOUSE_SIZE, segments, segments);
