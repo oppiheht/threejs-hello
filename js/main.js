@@ -1,5 +1,5 @@
 $.ajaxSetup( { "async": false } );
-let racks = $.getJSON('js/map2.json').responseJSON; 
+let racks = $.getJSON('js/maps/map-small.json').responseJSON; 
 let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 10, 100000);
 let gui = new dat.GUI();
