@@ -26,10 +26,35 @@ function randomColor() {
   return '#'+r+g+b;
 }
   
-let RACK_HEIGHT = 1828.8;
+let TOP_SHELF_HEIGHT = 1828.8;
+let SHELVES = 5;
+let SHELF_THICKNESS = 63; //63mm = 2.5in
+let RACK_LEG_THICKNESS = 50; // ~2in
 racks.forEach(function(rack, index) {
-  let rackGeom = new THREE.BoxBufferGeometry(-rack.length, RACK_HEIGHT, rack.depth);
-  rackGeom.applyMatrix( new THREE.Matrix4().makeTranslation( -rack.length / 2, RACK_HEIGHT / 2, -rack.depth / 2));
+  let rackGeom = new THREE.Geometry();
+
+  for (let i = 0; i < SHELVES; i++) {
+    let shelfRackGeom = new THREE.BoxGeometry(-rack.length, SHELF_THICKNESS, rack.depth);
+    shelfRackGeom.translate(0, TOP_SHELF_HEIGHT/(SHELVES-1)*i, 0);
+    rackGeom.merge(shelfRackGeom, shelfRackGeom.matrix);
+  }
+  let backLeftLegGeom = new THREE.BoxGeometry(RACK_LEG_THICKNESS, TOP_SHELF_HEIGHT, RACK_LEG_THICKNESS);
+  backLeftLegGeom.translate(-rack.length/2 + RACK_LEG_THICKNESS/2, TOP_SHELF_HEIGHT / 2, -rack.depth / 2 + RACK_LEG_THICKNESS / 2);
+  rackGeom.merge(backLeftLegGeom, backLeftLegGeom.matrix);
+
+  let backRightLegGeom = new THREE.BoxGeometry(RACK_LEG_THICKNESS, TOP_SHELF_HEIGHT, RACK_LEG_THICKNESS);
+  backRightLegGeom.translate(rack.length/2 - RACK_LEG_THICKNESS/2, TOP_SHELF_HEIGHT / 2, -rack.depth / 2 + RACK_LEG_THICKNESS / 2);
+  rackGeom.merge(backRightLegGeom, backRightLegGeom.matrix);
+
+  let frontLeftLegGeom = new THREE.BoxGeometry(RACK_LEG_THICKNESS, TOP_SHELF_HEIGHT, RACK_LEG_THICKNESS);
+  frontLeftLegGeom.translate(-rack.length/2 + RACK_LEG_THICKNESS/2, TOP_SHELF_HEIGHT / 2, rack.depth / 2 - RACK_LEG_THICKNESS / 2);
+  rackGeom.merge(frontLeftLegGeom, frontLeftLegGeom.matrix);
+
+  let frontRightLegGeom = new THREE.BoxGeometry(RACK_LEG_THICKNESS, TOP_SHELF_HEIGHT, RACK_LEG_THICKNESS);
+  frontRightLegGeom.translate(rack.length/2 - RACK_LEG_THICKNESS/2, TOP_SHELF_HEIGHT / 2, rack.depth / 2 - RACK_LEG_THICKNESS / 2);
+  rackGeom.merge(frontRightLegGeom, frontRightLegGeom.matrix);
+
+  rackGeom.applyMatrix( new THREE.Matrix4().makeTranslation( -rack.length / 2, SHELF_THICKNESS/2, -rack.depth / 2));
   let rackMaterial = new THREE.MeshBasicMaterial({ color: randomColor() });
   let rackMesh = new THREE.Mesh(rackGeom, rackMaterial);
   rackMesh.position.x = -rack.origin[0];
@@ -64,6 +89,7 @@ for (let i = 0; i < 30; i++) {
     let robot = new THREE.Mesh(robotGeom, robotMaterial);
     scene.add(robot);
     robot.position.x = 1000;
+    robot.position.y = 250;
     robot.position.z = 1000 * i;
 }
 
