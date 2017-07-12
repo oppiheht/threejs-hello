@@ -109,12 +109,13 @@
   });
 
   let ARROW_HEAD_LENGTH = 1000;
+  let ARROW_HEAD_WIDTH = 400;
   tracks.links.forEach(function(link) {
     let fromVector = nodeIdToMeshMap[link.source].position;
     let toVector = nodeIdToMeshMap[link.target].position;
     let direction = toVector.clone().sub(fromVector);
     let length = direction.length();
-    let arrowMesh = new THREE.ArrowHelper(direction.normalize(), fromVector, length, 0x00ff00, ARROW_HEAD_LENGTH);
+    let arrowMesh = new THREE.ArrowHelper(direction.normalize(), fromVector, length, 0x00ff00, ARROW_HEAD_LENGTH, ARROW_HEAD_WIDTH);
     scene.add(arrowMesh);
   });
 
