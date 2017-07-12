@@ -1,5 +1,6 @@
 $.ajaxSetup( { "async": false } );
-let racks = $.getJSON('js/maps/map-small.json').responseJSON; 
+let racks = $.getJSON('js/maps/map-small.json').responseJSON;
+let tracks = $.getJSON('js/maps/tracks-small.json').responseJSON; 
 let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 10, 100000);
 let gui = new dat.GUI();
@@ -82,16 +83,39 @@ floor.position.z = 20000;
 floor.rotation.x = (-Math.PI / 2);
 scene.add(floor);
 
-
 let robotGeom = new THREE.BoxBufferGeometry(640, 500, 620);
 let robotMaterial = new THREE.MeshBasicMaterial({color: 0x0000ee});
 for (let i = 0; i < 30; i++) {
-    let robot = new THREE.Mesh(robotGeom, robotMaterial);
-    scene.add(robot);
-    robot.position.x = 1000;
-    robot.position.y = 250;
-    robot.position.z = 1000 * i;
+  let robot = new THREE.Mesh(robotGeom, robotMaterial);
+  scene.add(robot);
+  robot.position.x = 3000;
+  robot.position.y = 250;
+  robot.position.z = 1000 * i;
 }
+
+let TRACK_NODE_HEIGHT = 300;
+let TRACK_NODE_SIZE = 100;
+let nodeGeom = new THREE.SphereBufferGeometry(TRACK_NODE_SIZE, 32, 32);
+let nodeMaterial = new THREE.MeshBasicMaterial({color: 0x00ee00});
+let nodeIdToMeshMap = {};
+tracks.nodes.forEach(function(node) {
+  let nodeMesh = new THREE.Mesh(nodeGeom, nodeMaterial);
+  nodeMesh.position.x = -node.pos[0];
+  nodeMesh.position.y = TRACK_NODE_HEIGHT;
+  nodeMesh.position.z = node.pos[1];
+  scene.add(nodeMesh);
+  nodeIdToMeshMap[node.id] = nodeMesh;
+});
+
+let ARROW_HEAD_LENGTH = 1000;
+tracks.links.forEach(function(link) {
+  let fromVector = nodeIdToMeshMap[link.source].position;
+  let toVector = nodeIdToMeshMap[link.target].position;
+  let direction = toVector.clone().sub(fromVector);
+  let length = direction.length();
+  let arrowMesh = new THREE.ArrowHelper(direction.normalize(), fromVector, length, 0x00ff00, ARROW_HEAD_LENGTH);
+  scene.add(arrowMesh);
+});
 
 let render = function () {
   requestAnimationFrame(render);
