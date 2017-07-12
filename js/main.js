@@ -84,7 +84,7 @@
   floor.rotation.x = (-Math.PI / 2);
   scene.add(floor);
 
-  let robotGeom = new THREE.BoxBufferGeometry(640, 500, 620);
+  let robotGeom = new THREE.BoxBufferGeometry(640, 600, 620);
   let robotMaterial = new THREE.MeshBasicMaterial({color: 0x0000ee});
   for (let i = 0; i < 30; i++) {
     let robot = new THREE.Mesh(robotGeom, robotMaterial);
