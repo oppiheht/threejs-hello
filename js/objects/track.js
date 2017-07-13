@@ -1,18 +1,22 @@
 var trackModule = (function(scene) {
 
+  let xOffset = 81848;
+  let zOffset = 0;
+
   let  _nodeIdToMeshMap = {};
 
   let NODE_HEIGHT = 300;
   let NODE_SIZE = 100;
   let NODE_FIDELITY = 32;
   function addNodes(nodes) {
+
     let nodeGeom = new THREE.SphereBufferGeometry(NODE_SIZE, NODE_FIDELITY, NODE_FIDELITY);
     let nodeMaterial = new THREE.MeshBasicMaterial({color: 0x00ee00});
     nodes.forEach(function(node) {
       let nodeMesh = new THREE.Mesh(nodeGeom, nodeMaterial);
-      nodeMesh.position.x = -node.pos[0];
+      nodeMesh.position.x = -(node.pos[0] + xOffset);
       nodeMesh.position.y = NODE_HEIGHT;
-      nodeMesh.position.z = node.pos[1];
+      nodeMesh.position.z = node.pos[1] + zOffset;
       scene.add(nodeMesh);
       _nodeIdToMeshMap[node.id] = nodeMesh;
     });

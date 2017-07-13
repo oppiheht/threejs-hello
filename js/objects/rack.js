@@ -6,8 +6,6 @@ var rackModule = (function(scene) {
   let RACK_LEG_THICKNESS = 50; // ~2in
 
   function addRack(rack) {
-    let xOffset = 0; //81848;
-    let yOffset = 0;
     let rackGeom = new THREE.Geometry();
 
     for (let i = 0; i < SHELVES; i++) {
@@ -35,8 +33,8 @@ var rackModule = (function(scene) {
     let rackMaterial = new THREE.MeshBasicMaterial({ color: _randomColor() });
     let rackMesh = new THREE.Mesh(rackGeom, rackMaterial);
     rackMesh.name = rack.name;
-    rackMesh.position.x = -(rack.origin[0] + xOffset);
-    rackMesh.position.z = rack.origin[1] + yOffset;
+    rackMesh.position.x = -rack.origin[0];
+    rackMesh.position.z = rack.origin[1];
     rackMesh.rotation.y = (rack.angle * Math.PI / 180);
     scene.add(rackMesh);
   }
