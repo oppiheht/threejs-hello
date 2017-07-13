@@ -41,9 +41,31 @@ var warehouseModule = (function(scene) {
     floor.rotation.x = (-Math.PI / 2);
   }
 
+  PILLAR_HEIGHT = 6000;
+  PILLAR_WIDTH = 200;
+  function addPillars(startPoint, spacing, numRows, numCols) {
+    startPoint = startPoint || {x: -3353, z: -15468};
+    spacing = spacing || {x: 18288, z: 12192};
+    numRows = numRows || 5;
+    numCols = numCols || 5;
+
+    let pillarGeom = new THREE.BoxBufferGeometry(PILLAR_WIDTH, PILLAR_HEIGHT, PILLAR_WIDTH);
+    let pillarMaterial = new THREE.MeshBasicMaterial({color: 0xf4e242});
+    for (let row = 1; row <= numRows; row++) {
+      for (let col = 1; col <= numCols; col++) {
+        let pillar = new THREE.Mesh(pillarGeom, pillarMaterial);
+        pillar.position.x = - (startPoint.x + (spacing.x * col));
+        pillar.position.y = PILLAR_HEIGHT / 2;
+        pillar.position.z = startPoint.z + (spacing.z * row);
+        scene.add(pillar);
+      }
+    }
+  }
+
   return {
     addFloor: addFloor,
     addCheckeredFloor: addCheckeredFloor,
+    addPillars: addPillars,
   };
 
 })(scene);
