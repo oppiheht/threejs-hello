@@ -4,7 +4,21 @@ var warehouseModule = (function(scene) {
   let FLOOR_CHECKER_SIZE = 200000;
   let SEGMENTS = WAREHOUSE_SIZE / FLOOR_CHECKER_SIZE;
 
+  var loader = new THREE.TextureLoader();
+
   function addFloor() {
+    let floorTexture = loader.load('../../res/concrete.jpg');
+    floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping;
+    floorTexture.repeat.set(100, 100);
+
+    let floorMaterial = new THREE.MeshPhongMaterial({color: 0xffffff, specular: 0x111111, map: floorTexture});
+    let floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(WAREHOUSE_SIZE, WAREHOUSE_SIZE), floorMaterial);
+
+    _positionFloor(floor);
+    scene.add(floor);
+  }
+
+  function addCheckeredFloor() {
     let materials = [new THREE.MeshBasicMaterial({ color: 0x666666}), new THREE.MeshBasicMaterial({ color: 0x777777})];
     let floorGeom = new THREE.PlaneGeometry(WAREHOUSE_SIZE, WAREHOUSE_SIZE, SEGMENTS, SEGMENTS);
 
@@ -16,15 +30,20 @@ var warehouseModule = (function(scene) {
       }
     }
     let floor = new THREE.Mesh(floorGeom, materials);
+    _positionFloor(floor);
+    scene.add(floor);
+  }
+
+  function _positionFloor(floor) {
     floor.position.x = -30000;
     floor.position.y = -5;
     floor.position.z = 20000;
     floor.rotation.x = (-Math.PI / 2);
-    scene.add(floor);
   }
 
   return {
     addFloor: addFloor,
+    addCheckeredFloor: addCheckeredFloor,
   };
 
 })(scene);
