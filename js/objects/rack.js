@@ -1,7 +1,7 @@
 var rackModule = (function(scene) {
 
   let TOP_SHELF_HEIGHT = 1828.8;
-  let SHELVES = 5;
+  let SHELVES = 4;
   let SHELF_THICKNESS = 63; //63mm = 2.5in
   let RACK_LEG_THICKNESS = 50; // ~2in
 
@@ -32,6 +32,7 @@ var rackModule = (function(scene) {
     rackGeom.applyMatrix( new THREE.Matrix4().makeTranslation( -rack.length / 2, SHELF_THICKNESS/2, -rack.depth / 2));
     let rackMaterial = new THREE.MeshBasicMaterial({ color: _randomColor() });
     let rackMesh = new THREE.Mesh(rackGeom, rackMaterial);
+    rackMesh.name = rack.name;
     rackMesh.position.x = -rack.origin[0];
     rackMesh.position.z = rack.origin[1];
     rackMesh.rotation.y = (rack.angle * Math.PI / 180);

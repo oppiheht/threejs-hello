@@ -10,7 +10,13 @@ var scene = (function() {
   document.body.appendChild(renderer.domElement);
   let controls = new THREE.OrbitControls(camera);
 
-  scene.add(new THREE.AmbientLight(0x404040));
+  scene.add(new THREE.AmbientLight(0xdddddd));
+
+  let hover = {x: 0, z:0, name: ''};
+  let gui = new dat.GUI();
+  gui.add(hover, 'x').listen().name('Mouse X');
+  gui.add(hover, 'z').listen().name('Mouse Z');
+  gui.add(hover, 'name').listen().name('Name');
 
   let raycaster = new THREE.Raycaster();
   let mouse = new THREE.Vector2();
@@ -29,7 +35,9 @@ var scene = (function() {
     raycaster.setFromCamera(mouse, camera);
     var intersects = raycaster.intersectObjects(scene.children);
     if (intersects.length > 0) {
-      console.log(intersects[0].point);
+      hover.x = -intersects[0].point.x;
+      hover.z = intersects[0].point.z;
+      hover.name = intersects[0].object.name;
     }
   };
 
