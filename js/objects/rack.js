@@ -6,8 +6,8 @@ var rackModule = (function(scene) {
   let RACK_LEG_THICKNESS = 50; // ~2in
 
   function addRack(rack) {
-    //let xOffset = 81848;
-    //let yOffset = 0;
+    let xOffset = 0; //81848;
+    let yOffset = 0;
     let rackGeom = new THREE.Geometry();
 
     for (let i = 0; i < SHELVES; i++) {
