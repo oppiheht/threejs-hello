@@ -13,6 +13,7 @@ var warehouseModule = (function(scene) {
 
     let floorMaterial = new THREE.MeshPhongMaterial({color: 0xffffff, specular: 0x111111, map: floorTexture});
     let floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(WAREHOUSE_SIZE, WAREHOUSE_SIZE), floorMaterial);
+    floor.name = 'Floor';
 
     _positionFloor(floor);
     scene.add(floor);
@@ -57,6 +58,7 @@ var warehouseModule = (function(scene) {
         pillar.position.x = - (startPoint.x + (spacing.x * col));
         pillar.position.y = PILLAR_HEIGHT / 2;
         pillar.position.z = startPoint.z + (spacing.z * row);
+        pillar.name = 'Pillar ' + row + ',' + col;
         scene.add(pillar);
       }
     }
