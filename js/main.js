@@ -1,13 +1,25 @@
-(function(rackModule, warehouseModule, robotModule) {
-  $.ajaxSetup( { "async": false } );
-  let racks = $.getJSON('js/maps/testmap.json').responseJSON;
-  let tracks = $.getJSON('js/maps/tracks-small.json').responseJSON; 
+(function(rackModule, warehouseModule, robotModule, toteModule) {
 
-  racks.forEach(rackModule.addRack);
+  let config = {
+    'testmap-tracks': {
+      rackFile: 'js/maps/testmap.json',
+      rackOffset: {x: 0, z: 0},
+      trackFile: 'js/maps/tracks-small.json',
+      trackOffset: {x: 81848, z: 0},
+      toteFile: 'js/maps/totes.json',
+      toteOffset: {x: 81848, z: 0},
+    }
+  }
+
+  let currentConfig = config['testmap-tracks'];
+
+  $.ajaxSetup( { "async": false } );
+
+  rackModule.addRacks(currentConfig.rackFile, currentConfig.rackOffset);
   warehouseModule.addFloor();
   warehouseModule.addPillars();
   robotModule.addTestRobots();
-  trackModule.addNodes(tracks.nodes);
-  trackModule.addLinks(tracks.links);
+  trackModule.addTracks(currentConfig.trackFile, currentConfig.trackOffset);
+  toteModule.addTotes(currentConfig.toteFile, currentConfig.toteOffset);
 
-})(rackModule, warehouseModule, robotModule);
+})(rackModule, warehouseModule, robotModule, toteModule);

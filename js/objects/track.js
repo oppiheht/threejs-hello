@@ -1,22 +1,26 @@
 var trackModule = (function(scene) {
 
-  let xOffset = 81848;
-  let zOffset = 0;
-
   let  _nodeIdToMeshMap = {};
 
   let NODE_HEIGHT = 300;
   let NODE_SIZE = 100;
   let NODE_FIDELITY = 32;
-  function addNodes(nodes) {
 
+  function addTracks(tracksUrl, offset) {
+    let tracks = $.getJSON(tracksUrl).responseJSON; 
+    _addNodes(tracks.nodes, offset);
+    _addLinks(tracks.links);
+  }
+
+  function _addNodes(nodes, offset) {
+    offset = (typeof offset !== 'undefined') ? offset : {x:0, z:0};
     let nodeGeom = new THREE.SphereBufferGeometry(NODE_SIZE, NODE_FIDELITY, NODE_FIDELITY);
     let nodeMaterial = new THREE.MeshBasicMaterial({color: 0x00ee00});
     nodes.forEach(function(node) {
       let nodeMesh = new THREE.Mesh(nodeGeom, nodeMaterial);
-      nodeMesh.position.x = -(node.pos[0] + xOffset);
+      nodeMesh.position.x = -(node.pos[0] + offset.x);
       nodeMesh.position.y = NODE_HEIGHT;
-      nodeMesh.position.z = node.pos[1] + zOffset;
+      nodeMesh.position.z = node.pos[1] + offset.z;
       scene.add(nodeMesh);
       _nodeIdToMeshMap[node.id] = nodeMesh;
     });
@@ -25,7 +29,7 @@ var trackModule = (function(scene) {
 
   let ARROW_HEAD_LENGTH = 1000;
   let ARROW_HEAD_WIDTH = 400;
-  function addLinks(links) {
+  function _addLinks(links) {
     links.forEach(function(link) {
       let fromVector = _nodeIdToMeshMap[link.source].position;
       let toVector = _nodeIdToMeshMap[link.target].position;
@@ -38,8 +42,7 @@ var trackModule = (function(scene) {
 
 
   return {
-    addNodes: addNodes,
-    addLinks: addLinks,
+    addTracks: addTracks,
   };
 })(scene);
 

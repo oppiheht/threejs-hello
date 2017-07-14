@@ -5,7 +5,15 @@ var rackModule = (function(scene) {
   let SHELF_THICKNESS = 63; //63mm = 2.5in
   let RACK_LEG_THICKNESS = 50; // ~2in
 
-  function addRack(rack) {
+  function addRacks(racksUrl, offset) {
+    let racks = $.getJSON(racksUrl).responseJSON; 
+    offset = (typeof offset !== 'undefined') ? offset : {x:0,y:0,z:0};
+    racks.forEach(function(rack) {
+      _addRack(rack, offset);
+    });
+  }
+
+  function _addRack(rack, offset) {
     let rackGeom = new THREE.Geometry();
 
     for (let i = 0; i < SHELVES; i++) {
@@ -33,8 +41,8 @@ var rackModule = (function(scene) {
     let rackMaterial = new THREE.MeshBasicMaterial({ color: _randomColor() });
     let rackMesh = new THREE.Mesh(rackGeom, rackMaterial);
     rackMesh.name = rack.name;
-    rackMesh.position.x = -rack.origin[0];
-    rackMesh.position.z = rack.origin[1];
+    rackMesh.position.x = -(rack.origin[0] + offset.x);
+    rackMesh.position.z = rack.origin[1] + offset.z;
     rackMesh.rotation.y = (rack.angle * Math.PI / 180);
     scene.add(rackMesh);
   }
@@ -48,6 +56,6 @@ var rackModule = (function(scene) {
   }
 
   return {
-    addRack: addRack,
+    addRacks: addRacks,
   }
 })(scene);

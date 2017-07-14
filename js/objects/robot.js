@@ -7,7 +7,7 @@ robotModule = (function(scene) {
       let robot = new THREE.Mesh(robotGeom, robotMaterial);
       scene.add(robot);
       robot.position.x = 3000;
-      robot.position.y = 250;
+      robot.position.y = 300;
       robot.position.z = 1000 * i;
     }
   }
