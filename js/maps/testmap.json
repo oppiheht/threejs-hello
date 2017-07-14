@@ -29941,36 +29941,6 @@
   }, 
   {
     "origin": [
-      86715.599999999991, 
-      8229.5999999999985
-    ], 
-    "function": "shelf", 
-    "travelDistance": 700, 
-    "fiducialHeight": 570, 
-    "transfers": {}, 
-    "angle": 0.0, 
-    "name": "rack998", 
-    "shelves": [
-      {
-        "fiducials": [
-          {
-            "name": 1996, 
-            "location": 0.0
-          }, 
-          {
-            "name": 1997, 
-            "location": 2438.4
-          }
-        ], 
-        "height": 0
-      }
-    ], 
-    "depth": 609.6, 
-    "length": 2438.4, 
-    "type": "shelving_unit"
-  }, 
-  {
-    "origin": [
       89153.999999999985, 
       8229.5999999999985
     ], 
@@ -30019,36 +29989,6 @@
           }, 
           {
             "name": 2001, 
-            "location": 2438.4
-          }
-        ], 
-        "height": 0
-      }
-    ], 
-    "depth": 609.6, 
-    "length": 2438.4, 
-    "type": "shelving_unit"
-  }, 
-  {
-    "origin": [
-      89154.000000000015, 
-      7010.3999999999987
-    ], 
-    "function": "shelf", 
-    "travelDistance": 700, 
-    "fiducialHeight": 570, 
-    "transfers": {}, 
-    "angle": -180.0, 
-    "name": "rack1001", 
-    "shelves": [
-      {
-        "fiducials": [
-          {
-            "name": 2002, 
-            "location": 0.0
-          }, 
-          {
-            "name": 2003, 
             "location": 2438.4
           }
         ], 
@@ -30181,36 +30121,6 @@
   }, 
   {
     "origin": [
-      86715.599999999991, 
-      10972.799999999999
-    ], 
-    "function": "shelf", 
-    "travelDistance": 700, 
-    "fiducialHeight": 570, 
-    "transfers": {}, 
-    "angle": 0.0, 
-    "name": "rack1006", 
-    "shelves": [
-      {
-        "fiducials": [
-          {
-            "name": 2012, 
-            "location": 0.0
-          }, 
-          {
-            "name": 2013, 
-            "location": 2438.4
-          }
-        ], 
-        "height": 0
-      }
-    ], 
-    "depth": 609.6, 
-    "length": 2438.4, 
-    "type": "shelving_unit"
-  }, 
-  {
-    "origin": [
       89153.999999999985, 
       10972.799999999999
     ], 
@@ -30259,36 +30169,6 @@
           }, 
           {
             "name": 2017, 
-            "location": 2438.4
-          }
-        ], 
-        "height": 0
-      }
-    ], 
-    "depth": 609.6, 
-    "length": 2438.4, 
-    "type": "shelving_unit"
-  }, 
-  {
-    "origin": [
-      89154.000000000015, 
-      9753.5999999999985
-    ], 
-    "function": "shelf", 
-    "travelDistance": 700, 
-    "fiducialHeight": 570, 
-    "transfers": {}, 
-    "angle": -180.0, 
-    "name": "rack1009", 
-    "shelves": [
-      {
-        "fiducials": [
-          {
-            "name": 2018, 
-            "location": 0.0
-          }, 
-          {
-            "name": 2019, 
             "location": 2438.4
           }
         ], 

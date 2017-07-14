@@ -21,6 +21,7 @@ var trackModule = (function(scene) {
       nodeMesh.position.x = -(node.pos[0] + offset.x);
       nodeMesh.position.y = NODE_HEIGHT;
       nodeMesh.position.z = node.pos[1] + offset.z;
+      nodeMesh.name = node.id;
       scene.add(nodeMesh);
       _nodeIdToMeshMap[node.id] = nodeMesh;
     });

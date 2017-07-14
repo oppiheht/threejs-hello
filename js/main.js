@@ -20,6 +20,6 @@
   warehouseModule.addPillars();
   robotModule.addTestRobots();
   trackModule.addTracks(currentConfig.trackFile, currentConfig.trackOffset);
-  toteModule.addTotes(currentConfig.toteFile, currentConfig.toteOffset);
+  //toteModule.addTotes(currentConfig.toteFile, currentConfig.toteOffset);
 
 })(rackModule, warehouseModule, robotModule, toteModule);
