@@ -4,7 +4,7 @@
     'full-testmap-tracks': {
       rackFile: 'js/maps/testmap.json',
       rackOffset: {x: 0, z: 0},
-      trackFile: 'js/maps/tracks-small.json',
+      trackFile: 'js/maps/testarea-shifted-tracks.json',
       trackOffset: {x: 81848, z: 0},
       toteFile: 'js/maps/totes.json',
       toteOffset: {x: 81848, z: 0},
@@ -17,7 +17,7 @@
     }
   }
 
-  let currentConfig = config['small-testarea-tracks'];
+  let currentConfig = config['full-testmap-tracks'];
 
   $.ajaxSetup( { "async": false } );
 
