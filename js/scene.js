@@ -12,7 +12,7 @@ var scene = (function() {
 
   scene.add(new THREE.AmbientLight(0xdddddd));
 
-  let hover = {x: 0, z:0, name: ''};
+  let hover = {x:0, z:0, name: ''};
   let gui = new dat.GUI();
   gui.add(hover, 'x').listen().name('Mouse X');
   gui.add(hover, 'z').listen().name('Mouse Z');
@@ -25,6 +25,46 @@ var scene = (function() {
     mouse.y = - ( event.clientY / window.innerHeight) * 2 + 1;
   }
   window.addEventListener('mousemove', onMouseMove, false);
+
+  let measurement = {
+    firstVector: new THREE.Vector2(),
+    secondVector: new THREE.Vector2(),
+    firstPoint: '',
+    secondPoint: '',
+    distanceMillimeters: 0,
+    distanceInches: 0,
+  }
+
+  let measurementsGui = gui.addFolder('Measurement (M key)')
+  measurementsGui.add(measurement, 'firstPoint').listen();
+  measurementsGui.add(measurement, 'secondPoint').listen();
+  measurementsGui.add(measurement, 'distanceMillimeters').listen().name('Distance (mm)');
+  measurementsGui.add(measurement, 'distanceInches').listen().name('Distance (in)');
+  function onKeyDown(event) {
+    console.log(event);
+    if (event.code == 'KeyM') {
+      measurementsGui.closed = false;
+      if (measurement.firstVector.x == 0 && measurement.secondVector.y == 0) {
+        measurement.firstVector = new THREE.Vector2(hover.x, hover.z);
+        measurement.firstPoint = '('+Math.round(measurement.firstVector.x)+', '+Math.round(measurement.firstVector.y)+')';
+      }
+      else if (measurement.secondVector.x == 0 && measurement.secondVector.y == 0) {
+        measurement.secondVector = new THREE.Vector2(hover.x, hover.z);
+        measurement.secondPoint = '('+Math.round(measurement.secondVector.x)+', '+Math.round(measurement.secondVector.y)+')';
+        measurement.distanceMillimeters = Math.round(measurement.firstVector.distanceTo(measurement.secondVector));
+        measurement.distanceInches = measurement.distanceMillimeters / 25.4;
+      }
+      else {
+        measurement.firstVector = new THREE.Vector2(hover.x, hover.z);
+        measurement.firstPoint = '('+Math.round(measurement.firstVector.x)+', '+Math.round(measurement.firstVector.y)+')';
+        measurement.secondVector = new THREE.Vector2();
+        measurement.secondPoint = '';
+        measurement.distanceMillimeters = 0;
+        measurement.distanceInches = 0;
+      }
+    }
+  }
+  window.addEventListener('keydown', onKeyDown);
 
   let render = function () {
 
