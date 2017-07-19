@@ -45,5 +45,5 @@ var trackModule = (function(scene) {
   return {
     addTracks: addTracks,
   };
-})(scene);
+})(sceneModule.scene);
 

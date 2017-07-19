@@ -75,4 +75,4 @@ var rackModule = (function(scene) {
   return {
     addRacks: addRacks,
   }
-})(scene);
+})(sceneModule.scene);

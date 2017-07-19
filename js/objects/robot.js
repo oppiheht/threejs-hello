@@ -9,6 +9,7 @@ robotModule = (function(scene) {
       robot.position.x = 3000;
       robot.position.y = 300;
       robot.position.z = 1000 * i;
+      robot.name = 'picker-invia-' + (i+1);
     }
   }
 
@@ -41,4 +42,4 @@ robotModule = (function(scene) {
     addMercuryRobots: addMercuryRobots,
   };
 
-})(scene);
+})(sceneModule.scene);

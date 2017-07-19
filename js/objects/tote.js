@@ -27,4 +27,4 @@ var toteModule = (function(scene) {
   return {
     addTotes: addTotes,
   };
-})(scene);
+})(sceneModule.scene);
