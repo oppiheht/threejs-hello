@@ -14,7 +14,7 @@ robotModule = (function(scene) {
 
   function addMercuryRobots() {
     let loader = new THREE.JSONLoader();
-    loader.load("../res/mercury-translated-decimated.json", _onMercuryLoaded, _onMercuryLoading, _onMercuryFailed);
+    loader.load("../res/mercury-translated-decimated2.json", _onMercuryLoaded, _onMercuryLoading, _onMercuryFailed);
   }
 
   function _onMercuryLoaded(robotGeom) {
