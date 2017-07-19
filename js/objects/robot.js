@@ -1,5 +1,8 @@
 robotModule = (function(scene) {
 
+  // robotName -> Mesh
+  let _robots = {};
+
   function addTestRobots() {
     let robotGeom = new THREE.BoxBufferGeometry(640, 600, 620);
     let robotMaterial = new THREE.MeshBasicMaterial({color: 0x0000ee});
@@ -10,6 +13,7 @@ robotModule = (function(scene) {
       robot.position.y = 300;
       robot.position.z = 1000 * i;
       robot.name = 'picker-invia-' + (i+1);
+      _robots[robot.name] = robot;
     }
   }
 
@@ -26,6 +30,7 @@ robotModule = (function(scene) {
       robot.position.x = 3000;
       robot.position.z = 1000 * i;
       robot.name = 'picker-invia-' + (i+1);
+      _robots[robot.name] = robot;
     }
   }
 
@@ -37,9 +42,21 @@ robotModule = (function(scene) {
     alert('mercury failed to load');
   }
 
+  function setRobotPosition(robotName, x, z, angle) {
+    let robot = _robots[robotName];
+    if (!robot) {
+      console.error('no robot named "'+robotName+'" to set position on.');
+      return;
+    }
+    robot.position.x = x;
+    robot.position.z = z;
+    robot.rotation = angle;
+  }
+
   return {
     addTestRobots: addTestRobots,
     addMercuryRobots: addMercuryRobots,
+    setRobotPosition: setRobotPosition,
   };
 
 })(sceneModule.scene);
