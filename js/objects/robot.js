@@ -12,8 +12,33 @@ robotModule = (function(scene) {
     }
   }
 
+  function addMercuryRobots() {
+    let loader = new THREE.JSONLoader();
+    loader.load("../res/mercury-translated-decimated.json", _onMercuryLoaded, _onMercuryLoading, _onMercuryFailed);
+  }
+
+  function _onMercuryLoaded(robotGeom) {
+    let robotMaterial = new THREE.MeshToonMaterial({color: 0x2194ce, specular: 0x111111});
+    for (let i = 0; i < 30; i++) {
+      let robot = new THREE.Mesh(robotGeom, robotMaterial);
+      scene.add(robot);
+      robot.position.x = 3000;
+      robot.position.z = 1000 * i;
+      robot.name = 'picker-invia-' + (i+1);
+    }
+  }
+
+  function _onMercuryLoading(xhr) {
+    console.log( (xhr.loaded/xhr.total * 100) + '% loaded');
+  }
+
+  function _onMercuryFailed(xhr) {
+    alert('mercury failed to load');
+  }
+
   return {
     addTestRobots: addTestRobots,
+    addMercuryRobots: addMercuryRobots,
   };
 
 })(scene);

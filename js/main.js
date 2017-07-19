@@ -25,6 +25,7 @@
   warehouseModule.addFloor();
   warehouseModule.addPillars();
   robotModule.addTestRobots();
+  //robotModule.addMercuryRobots();
   trackModule.addTracks(currentConfig.trackFile, currentConfig.trackOffset);
   //toteModule.addTotes(currentConfig.toteFile, currentConfig.toteOffset);
 

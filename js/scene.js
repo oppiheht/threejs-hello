@@ -10,7 +10,8 @@ var scene = (function() {
   document.body.appendChild(renderer.domElement);
   let controls = new THREE.OrbitControls(camera);
 
-  scene.add(new THREE.AmbientLight(0xdddddd));
+  scene.add(new THREE.DirectionalLight(0xffffff, .5));
+  scene.add(new THREE.AmbientLight(0xffffff, .5));
 
   let hover = {x:0, z:0, name: ''};
   let gui = new dat.GUI();
@@ -41,7 +42,6 @@ var scene = (function() {
   measurementsGui.add(measurement, 'distanceMillimeters').listen().name('Distance (mm)');
   measurementsGui.add(measurement, 'distanceInches').listen().name('Distance (in)');
   function onKeyDown(event) {
-    console.log(event);
     if (event.code == 'KeyM') {
       measurementsGui.closed = false;
       if (measurement.firstVector.x == 0 && measurement.secondVector.y == 0) {

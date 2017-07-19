@@ -14,8 +14,37 @@ var rackModule = (function(scene) {
   }
 
   function _addRack(rack, offset) {
-    let rackGeom = new THREE.Geometry();
+    let rackGeom = _getRackGeom(rack);
+    let rackMaterial = new THREE.MeshPhongMaterial({ color: _randomColor(), specular: 0x111111});
+    rackMaterial.side = THREE.DoubleSide;
+    let rackMesh = new THREE.Mesh(rackGeom, rackMaterial);
+    rackMesh.name = rack.name;
+    rackMesh.position.x = -(rack.origin[0] + offset.x);
+    rackMesh.position.z = rack.origin[1] + offset.z;
+    rackMesh.rotation.y = (rack.angle * Math.PI / 180);
+    scene.add(rackMesh);
+  }
 
+  let colorCodes = ['0', '2', '4', '6', '8', 'A', 'C', 'E']
+  function _randomColor() {
+    let r = colorCodes[Math.floor(colorCodes.length * Math.random())]; 
+    let g = colorCodes[Math.floor(colorCodes.length * Math.random())]; 
+    let b = colorCodes[Math.floor(colorCodes.length * Math.random())]; 
+    return '#'+r+g+b;
+  }
+
+
+  let _rackGeomCache = {};
+  function _getRackGeom(rack) {
+    let rackKey = rack.length+','+rack.depth;
+    if (!_rackGeomCache[rackKey]) {
+      _rackGeomCache[rackKey] = _buildRackGeom(rack);
+    }
+    return _rackGeomCache[rackKey];
+  }
+
+  function _buildRackGeom(rack) {
+    let rackGeom = new THREE.Geometry();
     for (let i = 0; i < SHELVES; i++) {
       let shelfRackGeom = new THREE.BoxGeometry(-rack.length, SHELF_THICKNESS, rack.depth);
       shelfRackGeom.translate(0, TOP_SHELF_HEIGHT/(SHELVES-1)*i, 0);
@@ -38,21 +67,9 @@ var rackModule = (function(scene) {
     rackGeom.merge(frontRightLegGeom, frontRightLegGeom.matrix);
 
     rackGeom.applyMatrix( new THREE.Matrix4().makeTranslation( -rack.length / 2, SHELF_THICKNESS/2, -rack.depth / 2));
-    let rackMaterial = new THREE.MeshBasicMaterial({ color: _randomColor() });
-    let rackMesh = new THREE.Mesh(rackGeom, rackMaterial);
-    rackMesh.name = rack.name;
-    rackMesh.position.x = -(rack.origin[0] + offset.x);
-    rackMesh.position.z = rack.origin[1] + offset.z;
-    rackMesh.rotation.y = (rack.angle * Math.PI / 180);
-    scene.add(rackMesh);
-  }
-
-  let colorCodes = ['0', '2', '4', '6', '8', 'A', 'C', 'E']
-  function _randomColor() {
-    let r = colorCodes[Math.floor(colorCodes.length * Math.random())]; 
-    let g = colorCodes[Math.floor(colorCodes.length * Math.random())]; 
-    let b = colorCodes[Math.floor(colorCodes.length * Math.random())]; 
-    return '#'+r+g+b;
+    rackGeom.computeFaceNormals();
+    rackGeom.computeVertexNormals();
+    return rackGeom;
   }
 
   return {
