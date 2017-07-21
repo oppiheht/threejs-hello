@@ -9,7 +9,7 @@ robotModule = (function(scene) {
     for (let i = 0; i < 30; i++) {
       let robot = new THREE.Mesh(robotGeom, robotMaterial);
       scene.add(robot);
-      robot.position.x = 3000;
+      robot.position.x = -105000;
       robot.position.y = 300;
       robot.position.z = 1000 * i;
       robot.name = 'picker-invia-' + (i+1);
