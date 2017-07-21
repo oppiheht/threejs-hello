@@ -32,6 +32,7 @@ var warehouseModule = (function(scene) {
 
     let pillarGeom = new THREE.BoxBufferGeometry(PILLAR_WIDTH, PILLAR_HEIGHT, PILLAR_WIDTH);
     let pillarMaterial = new THREE.MeshPhongMaterial({color: 0xf4e242, specular: 0x080808});
+    pillarMaterial.side = THREE.DoubleSide;
     for (let row = 1; row <= numRows; row++) {
       for (let col = 1; col <= numCols; col++) {
         let pillar = new THREE.Mesh(pillarGeom, pillarMaterial);
