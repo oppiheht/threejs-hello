@@ -17,7 +17,7 @@ var toteModule = (function(scene) {
 
   function _addTote(tote, offset) {
     let toteMesh = new THREE.Mesh(toteGeom, toteMaterial);
-    toteMesh.position.x = - (tote.slot_global_position[0] + offset.x);
+    toteMesh.position.x = tote.slot_global_position[0] + offset.x;
     toteMesh.position.y = tote.slot_local_position.z;
     toteMesh.position.z = tote.slot_global_position[1] + offset.z;
     toteMesh.name = 'Tote '+ tote.slot_label;

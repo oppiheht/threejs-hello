@@ -1,5 +1,6 @@
 var sceneModule = (function(gui) {
   let scene = new THREE.Scene();
+  scene.scale.x = -1;
   let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 10, 100000);
   
   camera.position.set(-57000, 37000, -27000);
@@ -10,7 +11,9 @@ var sceneModule = (function(gui) {
   document.body.appendChild(renderer.domElement);
   let controls = new THREE.OrbitControls(camera);
 
-  scene.add(new THREE.DirectionalLight(0xffffff, .5));
+  let directionalLight = new THREE.DirectionalLight(0xffffff, .5);
+  directionalLight.position.y = -1;
+  scene.add(directionalLight);
   scene.add(new THREE.AmbientLight(0xffffff, .5));
 
   let hover = {x:0, z:0, name: ''};

@@ -11,9 +11,10 @@ var warehouseModule = (function(scene) {
     floorTexture.repeat.set(WAREHOUSE_SIZE.x / 1024, WAREHOUSE_SIZE.z / 1024);
 
     let floorMaterial = new THREE.MeshPhongMaterial({color: 0xffffff, specular: 0x111111, map: floorTexture});
+    floorMaterial.side = THREE.DoubleSide;
     let floorGeom = new THREE.PlaneBufferGeometry(WAREHOUSE_SIZE.x, WAREHOUSE_SIZE.z);
-    floorGeom.rotateX(-Math.PI / 2);
-    floorGeom.translate((-WAREHOUSE_SIZE.x/2) - WAREHOUSE_CORNER_OFFSET.x, 0, (WAREHOUSE_SIZE.z/2) + WAREHOUSE_CORNER_OFFSET.z);
+    floorGeom.rotateX(Math.PI / 2);
+    floorGeom.translate(WAREHOUSE_SIZE.x/2 + WAREHOUSE_CORNER_OFFSET.x, 0, (WAREHOUSE_SIZE.z/2) + WAREHOUSE_CORNER_OFFSET.z);
     let floor = new THREE.Mesh(floorGeom, floorMaterial);
     floor.name = 'Floor';
 
@@ -34,7 +35,7 @@ var warehouseModule = (function(scene) {
     for (let row = 1; row <= numRows; row++) {
       for (let col = 1; col <= numCols; col++) {
         let pillar = new THREE.Mesh(pillarGeom, pillarMaterial);
-        pillar.position.x = - (startPoint.x + (spacing.x * col));
+        pillar.position.x = startPoint.x + (spacing.x * col);
         pillar.position.y = PILLAR_HEIGHT / 2;
         pillar.position.z = startPoint.z + (spacing.z * row);
         pillar.name = 'Pillar ' + row + ',' + col;

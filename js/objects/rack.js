@@ -19,7 +19,7 @@ var rackModule = (function(scene) {
     rackMaterial.side = THREE.DoubleSide;
     let rackMesh = new THREE.Mesh(rackGeom, rackMaterial);
     rackMesh.name = rack.name;
-    rackMesh.position.x = -(rack.origin[0] + offset.x);
+    rackMesh.position.x = (rack.origin[0] + offset.x);
     rackMesh.position.z = rack.origin[1] + offset.z;
     rackMesh.rotation.y = (rack.angle * Math.PI / 180);
     scene.add(rackMesh);
@@ -66,7 +66,7 @@ var rackModule = (function(scene) {
     frontRightLegGeom.translate(rack.length/2 - RACK_LEG_THICKNESS/2, TOP_SHELF_HEIGHT / 2, rack.depth / 2 - RACK_LEG_THICKNESS / 2);
     rackGeom.merge(frontRightLegGeom, frontRightLegGeom.matrix);
 
-    rackGeom.applyMatrix( new THREE.Matrix4().makeTranslation( -rack.length / 2, SHELF_THICKNESS/2, -rack.depth / 2));
+    rackGeom.applyMatrix( new THREE.Matrix4().makeTranslation(rack.length / 2, SHELF_THICKNESS/2, -rack.depth / 2));
     rackGeom.computeFaceNormals();
     rackGeom.computeVertexNormals();
     return rackGeom;

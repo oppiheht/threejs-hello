@@ -18,7 +18,7 @@ var trackModule = (function(scene) {
     let nodeMaterial = new THREE.MeshBasicMaterial({color: 0x00ee00});
     nodes.forEach(function(node) {
       let nodeMesh = new THREE.Mesh(nodeGeom, nodeMaterial);
-      nodeMesh.position.x = -(node.pos[0] + offset.x);
+      nodeMesh.position.x = node.pos[0] + offset.x;
       nodeMesh.position.y = NODE_HEIGHT;
       nodeMesh.position.z = node.pos[1] + offset.z;
       nodeMesh.name = node.id;
