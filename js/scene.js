@@ -51,7 +51,6 @@ var sceneModule = (function(gui) {
     scene: scene,
     camera: camera,
     hover: hover,
-    raycaster: raycaster,
   };
 
 })(datguiModule.gui);

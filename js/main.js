@@ -2,6 +2,10 @@
 
   let config = {
     'full-testmap-tracks': {
+      warehouseSize: {x: 109728, z: 62179},
+      warehouseCornerOffset: {x: -3353, z: -15468},
+      pillarSpacing: {x: 18288, z: 12192},
+      pillarSize: 200,
       rackFile: 'js/maps/testmap.json',
       rackOffset: {x: 0, z: 0},
       trackFile: 'js/maps/testarea-shifted-tracks.json',
@@ -22,8 +26,8 @@
   $.ajaxSetup( { "async": false } );
 
   rackModule.addRacks(currentConfig.rackFile, currentConfig.rackOffset);
-  warehouseModule.addFloor();
-  warehouseModule.addPillars();
+  warehouseModule.addFloor(currentConfig.warehouseSize, currentConfig.warehouseCornerOffset);
+  warehouseModule.addPillars(currentConfig.warehouseCornerOffset, currentConfig.pillarSpacing, currentConfig.pillarSize, 5, 5);
   robotModule.addTestRobots();
   //robotModule.addMercuryRobots();
   trackModule.addTracks(currentConfig.trackFile, currentConfig.trackOffset);

@@ -1,20 +1,17 @@
 var warehouseModule = (function(scene) {
 
-  let WAREHOUSE_SIZE = {x: 109728, z: 62179};
-  let WAREHOUSE_CORNER_OFFSET = {x: -3353, z: -15468};
-
   var loader = new THREE.TextureLoader();
 
-  function addFloor() {
+  function addFloor(warehouseSize, warehouseCornerOffset) {
     let floorTexture = loader.load('../../res/concrete.jpg');
     floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping;
-    floorTexture.repeat.set(WAREHOUSE_SIZE.x / 1024, WAREHOUSE_SIZE.z / 1024);
+    floorTexture.repeat.set(warehouseSize.x / 1024, warehouseSize.z / 1024);
 
     let floorMaterial = new THREE.MeshPhongMaterial({color: 0xffffff, specular: 0x111111, map: floorTexture});
     floorMaterial.side = THREE.DoubleSide;
-    let floorGeom = new THREE.PlaneBufferGeometry(WAREHOUSE_SIZE.x, WAREHOUSE_SIZE.z);
+    let floorGeom = new THREE.PlaneBufferGeometry(warehouseSize.x, warehouseSize.z);
     floorGeom.rotateX(Math.PI / 2);
-    floorGeom.translate(WAREHOUSE_SIZE.x/2 + WAREHOUSE_CORNER_OFFSET.x, 0, (WAREHOUSE_SIZE.z/2) + WAREHOUSE_CORNER_OFFSET.z);
+    floorGeom.translate(warehouseSize.x/2 + warehouseCornerOffset.x, 0, (warehouseSize.z/2) + warehouseCornerOffset.z);
     let floor = new THREE.Mesh(floorGeom, floorMaterial);
     floor.name = 'Floor';
 
@@ -23,14 +20,8 @@ var warehouseModule = (function(scene) {
   }
 
   PILLAR_HEIGHT = 6000;
-  PILLAR_WIDTH = 200;
-  function addPillars(startPoint, spacing, numRows, numCols) {
-    startPoint = startPoint || WAREHOUSE_CORNER_OFFSET;
-    spacing = spacing || {x: 18288, z: 12192};
-    numRows = numRows || 5;
-    numCols = numCols || 5;
-
-    let pillarGeom = new THREE.BoxBufferGeometry(PILLAR_WIDTH, PILLAR_HEIGHT, PILLAR_WIDTH);
+  function addPillars(startPoint, spacing, pillarSize, numRows, numCols) {
+    let pillarGeom = new THREE.BoxBufferGeometry(pillarSize, PILLAR_HEIGHT, pillarSize);
     let pillarMaterial = new THREE.MeshPhongMaterial({color: 0xf4e242, specular: 0x080808});
     pillarMaterial.side = THREE.DoubleSide;
     for (let row = 1; row <= numRows; row++) {
