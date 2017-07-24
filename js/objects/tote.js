@@ -1,4 +1,4 @@
-var toteModule = (function(scene) {
+(function(wm3d) {
  
   let TOTE_LENGTH = 460;
   let TOTE_WIDTH = 260;
@@ -21,10 +21,10 @@ var toteModule = (function(scene) {
     toteMesh.position.y = tote.slot_local_position.z;
     toteMesh.position.z = tote.slot_global_position[1] + offset.z;
     toteMesh.name = 'Tote '+ tote.slot_label;
-    scene.add(toteMesh);
+    wm3d.scene.add(toteMesh);
   }
 
-  return {
+  wm3d.toteModule = {
     addTotes: addTotes,
   };
-})(sceneModule.scene);
+})(wm3d);

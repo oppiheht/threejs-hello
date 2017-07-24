@@ -1,4 +1,4 @@
-var trackModule = (function(scene) {
+(function(wm3d) {
 
   let  _nodeIdToMeshMap = {};
 
@@ -22,7 +22,7 @@ var trackModule = (function(scene) {
       nodeMesh.position.y = NODE_HEIGHT;
       nodeMesh.position.z = node.pos[1] + offset.z;
       nodeMesh.name = node.id;
-      scene.add(nodeMesh);
+      wm3d.scene.add(nodeMesh);
       _nodeIdToMeshMap[node.id] = nodeMesh;
     });
   }
@@ -37,13 +37,12 @@ var trackModule = (function(scene) {
       let direction = toVector.clone().sub(fromVector);
       let length = direction.length();
       let arrowMesh = new THREE.ArrowHelper(direction.normalize(), fromVector, length, 0x00ff00, ARROW_HEAD_LENGTH, ARROW_HEAD_WIDTH);
-      scene.add(arrowMesh);
+      wm3d.scene.add(arrowMesh);
     });
   }
 
 
-  return {
+  return wm3d.trackModule = {
     addTracks: addTracks,
   };
-})(sceneModule.scene);
-
+})(wm3d);

@@ -1,4 +1,4 @@
-var warehouseModule = (function(scene) {
+(function(wm3d) {
 
   var loader = new THREE.TextureLoader();
 
@@ -16,7 +16,7 @@ var warehouseModule = (function(scene) {
     floor.name = 'Floor';
 
     floor.position.y = -5;
-    scene.add(floor);
+    wm3d.scene.add(floor);
   }
 
   PILLAR_HEIGHT = 6000;
@@ -31,14 +31,14 @@ var warehouseModule = (function(scene) {
         pillar.position.y = PILLAR_HEIGHT / 2;
         pillar.position.z = startPoint.z + (spacing.z * row);
         pillar.name = 'Pillar ' + row + ',' + col;
-        scene.add(pillar);
+        wm3d.scene.add(pillar);
       }
     }
   }
 
-  return {
+  wm3d.warehouseModule = {
     addFloor: addFloor,
     addPillars: addPillars,
   };
 
-})(sceneModule.scene);
+})(wm3d);

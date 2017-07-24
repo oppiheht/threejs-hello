@@ -1,4 +1,4 @@
-var sceneModule = (function(gui) {
+var wm3d = (function() {
   let scene = new THREE.Scene();
   scene.scale.x = -1;
   let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 10, 100000);
@@ -18,6 +18,7 @@ var sceneModule = (function(gui) {
 
   let hover = {x:0, z:0, name: ''};
   
+  let gui = new dat.GUI();
   gui.add(hover, 'x').listen().name('Mouse X');
   gui.add(hover, 'z').listen().name('Mouse Z');
   gui.add(hover, 'name').listen().name('Name');
@@ -51,7 +52,7 @@ var sceneModule = (function(gui) {
     scene: scene,
     camera: camera,
     hover: hover,
+    gui: gui,
   };
 
-})(datguiModule.gui);
-
+})();

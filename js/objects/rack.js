@@ -1,4 +1,4 @@
-var rackModule = (function(scene) {
+(function(wm3d) {
 
   let TOP_SHELF_HEIGHT = 1828.8;
   let SHELVES = 4;
@@ -22,7 +22,7 @@ var rackModule = (function(scene) {
     rackMesh.position.x = (rack.origin[0] + offset.x);
     rackMesh.position.z = rack.origin[1] + offset.z;
     rackMesh.rotation.y = (rack.angle * Math.PI / 180);
-    scene.add(rackMesh);
+    wm3d.scene.add(rackMesh);
   }
 
   let colorCodes = ['0', '2', '4', '6', '8', 'A', 'C', 'E']
@@ -72,7 +72,7 @@ var rackModule = (function(scene) {
     return rackGeom;
   }
 
-  return {
+  wm3d.rackModule = {
     addRacks: addRacks,
   }
-})(sceneModule.scene);
+})(wm3d);

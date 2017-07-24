@@ -1,4 +1,4 @@
-robotModule = (function(scene) {
+(function(wm3d) {
 
   // robotName -> Mesh
   let _robots = {};
@@ -8,7 +8,7 @@ robotModule = (function(scene) {
     let robotMaterial = new THREE.MeshBasicMaterial({color: 0x0000ee});
     for (let i = 0; i < 30; i++) {
       let robot = new THREE.Mesh(robotGeom, robotMaterial);
-      scene.add(robot);
+      wm3d.scene.add(robot);
       robot.position.x = 105000;
       robot.position.y = 300;
       robot.position.z = 1000 * i;
@@ -26,7 +26,7 @@ robotModule = (function(scene) {
     let robotMaterial = new THREE.MeshToonMaterial({color: 0x2194ce, specular: 0x111111});
     for (let i = 0; i < 30; i++) {
       let robot = new THREE.Mesh(robotGeom, robotMaterial);
-      scene.add(robot);
+      wm3d.scene.add(robot);
       robot.position.x = 3000;
       robot.position.z = 1000 * i;
       robot.name = 'picker-invia-' + (i+1);
@@ -53,10 +53,10 @@ robotModule = (function(scene) {
     robot.rotation = angle;
   }
 
-  return {
+  wm3d.robotModule = {
     addTestRobots: addTestRobots,
     addMercuryRobots: addMercuryRobots,
     setRobotPosition: setRobotPosition,
   };
 
-})(sceneModule.scene);
+})(wm3d);

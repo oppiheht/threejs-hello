@@ -1,4 +1,4 @@
-(function(rackModule, warehouseModule, robotModule, toteModule) {
+(function(wm3d) {
 
   let config = {
     'full-testmap-tracks': {
@@ -25,12 +25,12 @@
 
   $.ajaxSetup( { "async": false } );
 
-  rackModule.addRacks(currentConfig.rackFile, currentConfig.rackOffset);
-  warehouseModule.addFloor(currentConfig.warehouseSize, currentConfig.warehouseCornerOffset);
-  warehouseModule.addPillars(currentConfig.warehouseCornerOffset, currentConfig.pillarSpacing, currentConfig.pillarSize, 5, 5);
-  robotModule.addTestRobots();
-  //robotModule.addMercuryRobots();
-  trackModule.addTracks(currentConfig.trackFile, currentConfig.trackOffset);
-  //toteModule.addTotes(currentConfig.toteFile, currentConfig.toteOffset);
+  wm3d.rackModule.addRacks(currentConfig.rackFile, currentConfig.rackOffset);
+  wm3d.warehouseModule.addFloor(currentConfig.warehouseSize, currentConfig.warehouseCornerOffset);
+  wm3d.warehouseModule.addPillars(currentConfig.warehouseCornerOffset, currentConfig.pillarSpacing, currentConfig.pillarSize, 5, 5);
+  wm3d.robotModule.addTestRobots();
+  //wm3d.robotModule.addMercuryRobots();
+  wm3d.trackModule.addTracks(currentConfig.trackFile, currentConfig.trackOffset);
+  //wm3d.toteModule.addTotes(currentConfig.toteFile, currentConfig.toteOffset);
 
-})(rackModule, warehouseModule, robotModule, toteModule);
+})(wm3d);
