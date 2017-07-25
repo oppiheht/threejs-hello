@@ -27,7 +27,15 @@
 
   function _search(event) {
     event.stopPropagation();
-    if (event.code == 'Escape') {
+    if (event.code == 'Escape' || event.code == 'Enter') {
+      if (event.target.value.length == 0) {
+        wm3d.scene.children.forEach((child) => {
+          if (child.outline) {
+            wm3d.scene.remove(child.outline);
+            child.outline = null;
+          }
+        })
+      }
       _input.removeEventListener('keydown', _search);
       _input.remove();
       _input = null;
