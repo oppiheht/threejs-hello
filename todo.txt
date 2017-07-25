@@ -1,5 +1,3 @@
-WASD controls, or better orbit controls
+better orbit controls
 Selectable robots and racks with highlighting
 Robots move via JS API
-Save camera on page reload
-Hot-swappable maps, track files, other config

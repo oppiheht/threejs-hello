@@ -2,14 +2,31 @@ var wm3d = (function() {
   let scene = new THREE.Scene();
   scene.scale.x = -1;
   let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 10, 100000);
-  
-  camera.position.set(-57000, 37000, -27000);
-  camera.lookAt(new THREE.Vector3(-37000, 0, -27000));
+
+  let controls = new THREE.OrbitControls(camera);
+  controls.keys = {LEFT: 65, UP: 87, RIGHT: 68, BOTTOM: 83}
+  controls.keyPanSpeed = 30;
+
+  const savedCamera = JSON.parse(localStorage.getItem('savedCamera'));
+  if (savedCamera) {
+    camera.position.copy(savedCamera.cameraPosition);
+    controls.target.copy(savedCamera.targetPosition);
+  }
+  else {
+    camera.position.set(-57000, 37000, -27000);
+    camera.lookAt(new THREE.Vector3(-37000, 0, -27000));
+  }
+
+  window.addEventListener('unload', () => {
+    localStorage.savedCamera = JSON.stringify({
+      cameraPosition: camera.position,
+      targetPosition: controls.target,
+    })
+  });
 
   let renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth - 3, window.innerHeight - 3);
   document.body.appendChild(renderer.domElement);
-  let controls = new THREE.OrbitControls(camera);
 
   let directionalLight = new THREE.DirectionalLight(0xffffff, .5);
   directionalLight.position.y = -1;
