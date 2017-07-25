@@ -14,6 +14,7 @@
     floorGeom.translate(warehouseSize.x/2 + warehouseCornerOffset.x, 0, (warehouseSize.z/2) + warehouseCornerOffset.z);
     let floor = new THREE.Mesh(floorGeom, floorMaterial);
     floor.name = 'Floor';
+    floor.searchable = false;
 
     floor.position.y = -5;
     wm3d.scene.add(floor);

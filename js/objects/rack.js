@@ -29,7 +29,7 @@
   function _randomColor() {
     let r = colorCodes[Math.floor(colorCodes.length * Math.random())]; 
     let g = colorCodes[Math.floor(colorCodes.length * Math.random())]; 
-    let b = colorCodes[Math.floor(colorCodes.length * Math.random())]; 
+    let b = colorCodes[Math.floor(colorCodes.length * Math.random())];
     return '#'+r+g+b;
   }
 
