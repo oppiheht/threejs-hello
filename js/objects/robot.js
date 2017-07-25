@@ -9,9 +9,7 @@
     for (let i = 0; i < 30; i++) {
       let robot = new THREE.Mesh(robotGeom, robotMaterial);
       wm3d.scene.add(robot);
-      robot.position.x = 105000;
-      robot.position.y = 300;
-      robot.position.z = 1000 * i;
+      robot.position.set(105000, 300, 1000 * i);
       robot.name = 'picker-invia-' + (i+1);
       _robots[robot.name] = robot;
     }
