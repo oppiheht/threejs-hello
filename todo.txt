@@ -1,9 +1,5 @@
-Measure distance between points
-Robot on floor that follows mouse (to help with measuring)
 WASD controls, or better orbit controls
 Selectable robots and racks with highlighting
 Robots move via JS API
-Floor of warehouse to match Hollar
-  or, put in walls
 Save camera on page reload
 Hot-swappable maps, track files, other config
