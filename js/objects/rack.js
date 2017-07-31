@@ -21,7 +21,7 @@
     rackMesh.name = rack.name;
     rackMesh.position.x = (rack.origin[0] + offset.x);
     rackMesh.position.z = rack.origin[1] + offset.z;
-    rackMesh.rotation.y = (rack.angle * Math.PI / 180);
+    rackMesh.rotation.y = (-rack.angle * Math.PI / 180);
     wm3d.scene.add(rackMesh);
   }
 

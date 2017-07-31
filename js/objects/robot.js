@@ -48,7 +48,7 @@
     }
     robot.position.x = x;
     robot.position.z = z;
-    robot.rotation = angle;
+    robot.setRotationFromAxisAngle(new THREE.Vector3(0, 1, 0), -angle * Math.PI / 180);
   }
 
   wm3d.robotModule = {
