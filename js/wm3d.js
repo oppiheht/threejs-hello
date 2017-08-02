@@ -3,6 +3,8 @@ var wm3d = (function() {
   scene.scale.x = -1;
   let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 10, 100000);
 
+  var loader = new THREE.TextureLoader();
+
   let controls = new THREE.OrbitControls(camera);
   controls.keys = {LEFT: 65, UP: 87, RIGHT: 68, BOTTOM: 83}
   controls.keyPanSpeed = 30;
@@ -70,6 +72,7 @@ var wm3d = (function() {
     camera: camera,
     hover: hover,
     gui: gui,
+    loader: loader,
   };
 
 })();

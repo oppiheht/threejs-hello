@@ -1,9 +1,7 @@
 (function(wm3d) {
 
-  var loader = new THREE.TextureLoader();
-
   function addFloor(warehouseSize, warehouseCornerOffset) {
-    let floorTexture = loader.load('../../res/concrete.jpg');
+    let floorTexture = wm3d.loader.load('../../res/sand_white.png');
     floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping;
     floorTexture.repeat.set(warehouseSize.x / 1024, warehouseSize.z / 1024);
 

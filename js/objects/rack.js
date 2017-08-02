@@ -8,16 +8,21 @@
   function addRacks(racksUrl, offset) {
     let racks = $.getJSON(racksUrl).responseJSON; 
     offset = (typeof offset !== 'undefined') ? offset : {x:0,y:0,z:0};
+
+    let rackTexture = wm3d.loader.load('../../res/wood5.png');
+    rackTexture.wrapS = rackTexture.wrapT = THREE.RepeatWrapping;
+    rackTexture.repeat.set(1, 1);
+    let rackMaterial = new THREE.MeshPhongMaterial({color: 0xffffff, specular: 0x111111, map: rackTexture});
+    rackMaterial.side = THREE.DoubleSide;
+
     racks.forEach(function(rack) {
-      _addRack(rack, offset);
+      _addRack(rack, offset, rackMaterial);
     });
   }
 
-  function _addRack(rack, offset) {
+  function _addRack(rack, offset, material) {
     let rackGeom = _getRackGeom(rack);
-    let rackMaterial = new THREE.MeshPhongMaterial({ color: _randomColor(), specular: 0x111111});
-    rackMaterial.side = THREE.DoubleSide;
-    let rackMesh = new THREE.Mesh(rackGeom, rackMaterial);
+    let rackMesh = new THREE.Mesh(rackGeom, material);
     rackMesh.name = rack.name;
     rackMesh.position.x = (rack.origin[0] + offset.x);
     rackMesh.position.z = rack.origin[1] + offset.z;
@@ -25,6 +30,7 @@
     wm3d.scene.add(rackMesh);
   }
 
+  //currently unused now that rack materials are from a texture and all the same color
   let colorCodes = ['0', '2', '4', '6', '8', 'A', 'C', 'E']
   function _randomColor() {
     let r = colorCodes[Math.floor(colorCodes.length * Math.random())]; 
