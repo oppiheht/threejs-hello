@@ -11,8 +11,8 @@
 
     let rackTexture = wm3d.loader.load('../../res/wood5.png');
     rackTexture.wrapS = rackTexture.wrapT = THREE.RepeatWrapping;
-    rackTexture.repeat.set(1, 1);
-    let rackMaterial = new THREE.MeshPhongMaterial({color: 0xffffff, specular: 0x111111, map: rackTexture});
+    rackTexture.repeat.set(4, 1);
+    let rackMaterial = new THREE.MeshPhongMaterial({color: 0xcccccc, specular: 0x111111, map: rackTexture});
     rackMaterial.side = THREE.DoubleSide;
 
     racks.forEach(function(rack) {

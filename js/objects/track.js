@@ -3,7 +3,7 @@
   let  _nodeIdToMeshMap = {};
 
   let NODE_HEIGHT = 300;
-  let NODE_SIZE = 100;
+  let NODE_SIZE = 200;
   let NODE_FIDELITY = 32;
 
   function addTracks(tracksUrl, offset) {
@@ -15,7 +15,8 @@
   function _addNodes(nodes, offset) {
     offset = (typeof offset !== 'undefined') ? offset : {x:0, z:0};
     let nodeGeom = new THREE.SphereBufferGeometry(NODE_SIZE, NODE_FIDELITY, NODE_FIDELITY);
-    let nodeMaterial = new THREE.MeshBasicMaterial({color: 0x00ee00});
+    let nodeMaterial = new THREE.MeshPhongMaterial({color: 0x00ff00, specular: 0xcccccc});
+    nodeMaterial.side = THREE.DoubleSide;
     nodes.forEach(function(node) {
       let nodeMesh = new THREE.Mesh(nodeGeom, nodeMaterial);
       nodeMesh.position.x = node.pos[0] + offset.x;
@@ -37,6 +38,9 @@
       let direction = toVector.clone().sub(fromVector);
       let length = direction.length();
       let arrowMesh = new THREE.ArrowHelper(direction.normalize(), fromVector, length, 0x00ff00, ARROW_HEAD_LENGTH, ARROW_HEAD_WIDTH);
+      arrowMesh.cone.material = new THREE.MeshPhongMaterial({color: 0x00cc00, specular: 0xcccccc});
+      arrowMesh.cone.material.side = THREE.DoubleSide;
+      arrowMesh.line.material = new THREE.MeshPhongMaterial({color: 0x00cc00, specular: 0xcccccc})
       wm3d.scene.add(arrowMesh);
     });
   }
