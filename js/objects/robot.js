@@ -8,6 +8,7 @@
     let robotMaterial = new THREE.MeshBasicMaterial({color: 0x0000ee});
     for (let i = 0; i < 30; i++) {
       let robot = new THREE.Mesh(robotGeom, robotMaterial);
+      robot.searchable = true;
       wm3d.scene.add(robot);
       robot.position.set(105000, 300, 1000 * i);
       robot.name = 'picker-invia-' + (i+1);

@@ -5,14 +5,14 @@ var wm3d = (function() {
 
   var loader = new THREE.TextureLoader();
 
-  let controls = new THREE.OrbitControls(camera);
-  controls.keys = {LEFT: 65, UP: 87, RIGHT: 68, BOTTOM: 83}
-  controls.keyPanSpeed = 30;
+  let _controls = new THREE.OrbitControls(camera);
+  _controls.keys = {LEFT: 65, UP: 87, RIGHT: 68, BOTTOM: 83}
+  _controls.keyPanSpeed = 30;
 
-  const savedCamera = JSON.parse(localStorage.getItem('savedCamera'));
-  if (savedCamera) {
-    camera.position.copy(savedCamera.cameraPosition);
-    controls.target.copy(savedCamera.targetPosition);
+  const _savedCamera = JSON.parse(localStorage.getItem('savedCamera'));
+  if (_savedCamera) {
+    camera.position.copy(_savedCamera.cameraPosition);
+    _controls.target.copy(_savedCamera.targetPosition);
   }
   else {
     camera.position.set(-57000, 37000, -27000);
@@ -20,59 +20,43 @@ var wm3d = (function() {
   }
 
   window.addEventListener('unload', () => {
-    localStorage.savedCamera = JSON.stringify({
+    localStorage._savedCamera = JSON.stringify({
       cameraPosition: camera.position,
-      targetPosition: controls.target,
+      targetPosition: _controls.target,
     })
   });
 
-  let renderer = new THREE.WebGLRenderer();
-  renderer.setSize(window.innerWidth - 3, window.innerHeight - 3);
-  document.body.appendChild(renderer.domElement);
+  let _renderer = new THREE.WebGLRenderer();
+  _renderer.setSize(window.innerWidth - 3, window.innerHeight - 3);
+  document.body.appendChild(_renderer.domElement);
 
   let directionalLight = new THREE.DirectionalLight(0xffffff, .5);
   directionalLight.position.y = -1;
   scene.add(directionalLight);
   scene.add(new THREE.AmbientLight(0xffffff, .5));
 
-  let hover = {x:0, z:0, name: ''};
-  
   let gui = new dat.GUI();
-  gui.add(hover, 'x').listen().name('Mouse X');
-  gui.add(hover, 'z').listen().name('Mouse Z');
-  gui.add(hover, 'name').listen().name('Name');
 
-  let raycaster = new THREE.Raycaster();
-  let mouse = new THREE.Vector2();
-  function onMouseMove(event) {
-    mouse.x = ( event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = - ( event.clientY / window.innerHeight) * 2 + 1;
+  let _onRenderFunctions = [];
+  function addOnRenderFunction(fn) {
+    _onRenderFunctions.push(fn);
   }
-  window.addEventListener('mousemove', onMouseMove, false);
 
-  let render = function () {
-
-    requestAnimationFrame(render);
-    controls.update();
-    renderer.render(scene, camera);
-
-    raycaster.setFromCamera(mouse, camera);
-    var intersects = raycaster.intersectObjects(scene.children);
-    if (intersects.length > 0) {
-      hover.x = -intersects[0].point.x;
-      hover.z = intersects[0].point.z;
-      hover.name = intersects[0].object.name;
-    }
+  let _render = function () {
+    requestAnimationFrame(_render);
+    _controls.update();
+    _renderer.render(scene, camera);
+    
+    _onRenderFunctions.forEach((fn) => fn.call());
   };
-
-  render();
+  _render();
 
   return {
     scene: scene,
     camera: camera,
-    hover: hover,
     gui: gui,
     loader: loader,
+    addOnRenderFunction: addOnRenderFunction
   };
 
 })();

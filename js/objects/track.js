@@ -23,6 +23,7 @@
       nodeMesh.position.y = NODE_HEIGHT;
       nodeMesh.position.z = node.pos[1] + offset.z;
       nodeMesh.name = node.id;
+      nodeMesh.searchable = true;
       wm3d.scene.add(nodeMesh);
       _nodeIdToMeshMap[node.id] = nodeMesh;
     });
@@ -40,7 +41,8 @@
       let arrowMesh = new THREE.ArrowHelper(direction.normalize(), fromVector, length, 0x00ff00, ARROW_HEAD_LENGTH, ARROW_HEAD_WIDTH);
       arrowMesh.cone.material = new THREE.MeshPhongMaterial({color: 0x00cc00, specular: 0xcccccc});
       arrowMesh.cone.material.side = THREE.DoubleSide;
-      arrowMesh.line.material = new THREE.MeshPhongMaterial({color: 0x00cc00, specular: 0xcccccc})
+      arrowMesh.line.material = new THREE.MeshPhongMaterial({color: 0x00cc00, specular: 0xcccccc});
+      arrowMesh.searchable = true;
       wm3d.scene.add(arrowMesh);
     });
   }

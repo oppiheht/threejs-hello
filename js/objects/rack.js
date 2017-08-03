@@ -27,6 +27,7 @@
     rackMesh.position.x = (rack.origin[0] + offset.x);
     rackMesh.position.z = rack.origin[1] + offset.z;
     rackMesh.rotation.y = (-rack.angle * Math.PI / 180);
+    rackMesh.searchable = true;
     wm3d.scene.add(rackMesh);
   }
 

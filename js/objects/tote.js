@@ -21,6 +21,7 @@
     toteMesh.position.y = tote.slot_local_position.z;
     toteMesh.position.z = tote.slot_global_position[1] + offset.z;
     toteMesh.name = 'Tote '+ tote.slot_label;
+    tote.searchable == true;
     wm3d.scene.add(toteMesh);
   }
 

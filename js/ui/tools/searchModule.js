@@ -41,7 +41,7 @@
   function search(text) {
     let count = 0;
     wm3d.scene.children.forEach((child) => {
-      if (child.searchable != false && child.name && child.name.toUpperCase().includes(text.toUpperCase())) {
+      if (child.searchable == true && child.name && child.name.toUpperCase().includes(text.toUpperCase())) {
         count++;
         if (!child.outline) {
           _outlineMesh(child);
