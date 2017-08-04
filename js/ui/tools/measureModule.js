@@ -19,17 +19,17 @@
     if (event.code == 'KeyM') {
       _measurementsGui.closed = false;
       if (_measurement.firstVector.x == 0 && _measurement.secondVector.y == 0) {
-        _measurement.firstVector = new THREE.Vector2(wm3d.hover.x, wm3d.hover.z);
+        _measurement.firstVector = new THREE.Vector2(wm3d.hoverModule.hover.x, wm3d.hoverModule.hover.z);
         _measurement.firstPoint = '('+Math.round(_measurement.firstVector.x)+', '+Math.round(_measurement.firstVector.y)+')';
       }
       else if (_measurement.secondVector.x == 0 && _measurement.secondVector.y == 0) {
-        _measurement.secondVector = new THREE.Vector2(wm3d.hover.x, wm3d.hover.z);
+        _measurement.secondVector = new THREE.Vector2(wm3d.hoverModule.hover.x, wm3d.hoverModule.hover.z);
         _measurement.secondPoint = '('+Math.round(_measurement.secondVector.x)+', '+Math.round(_measurement.secondVector.y)+')';
         _measurement.distanceMillimeters = Math.round(_measurement.firstVector.distanceTo(_measurement.secondVector));
         _measurement.distanceInches = _measurement.distanceMillimeters / 25.4;
       }
       else {
-        _measurement.firstVector = new THREE.Vector2(wm3d.hover.x, wm3d.hover.z);
+        _measurement.firstVector = new THREE.Vector2(wm3d.hoverModule.hover.x, wm3d.hoverModule.hover.z);
         _measurement.firstPoint = '('+Math.round(_measurement.firstVector.x)+', '+Math.round(_measurement.firstVector.y)+')';
         _measurement.secondVector = new THREE.Vector2();
         _measurement.secondPoint = '';
