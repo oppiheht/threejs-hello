@@ -19,12 +19,11 @@
 
   $.ajaxSetup( { "async": false } );
 
+  wm3d.displayInDomElement(document.body);
   wm3d.rackModule.addRacks(currentConfig.rackFile, currentConfig.rackOffset);
   wm3d.warehouseModule.addFloor(currentConfig.warehouseSize, currentConfig.warehouseCornerOffset);
   wm3d.warehouseModule.addPillars(currentConfig.warehouseCornerOffset, currentConfig.pillarSpacing, currentConfig.pillarSize, 5, 5);
   wm3d.robotModule.addTestRobots();
-  //wm3d.robotModule.addMercuryRobots();
   wm3d.trackModule.addTracks(currentConfig.trackFile, currentConfig.trackOffset);
-  //wm3d.toteModule.addTotes(currentConfig.toteFile, currentConfig.toteOffset);
 
 })(wm3d);

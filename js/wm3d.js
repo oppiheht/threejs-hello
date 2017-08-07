@@ -2,6 +2,7 @@ var wm3d = (function() {
   let scene = new THREE.Scene();
   scene.scale.x = -1;
   let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 10, 100000);
+  let _renderer = new THREE.WebGLRenderer();
 
   var loader = new THREE.TextureLoader();
 
@@ -26,10 +27,6 @@ var wm3d = (function() {
     })
   });
 
-  let _renderer = new THREE.WebGLRenderer();
-  _renderer.setSize(window.innerWidth - 3, window.innerHeight - 3);
-  document.body.appendChild(_renderer.domElement);
-
   let directionalLight = new THREE.DirectionalLight(0xffffff, .5);
   directionalLight.position.y = -1;
   scene.add(directionalLight);
@@ -51,12 +48,18 @@ var wm3d = (function() {
   };
   _render();
 
+  function displayInDomElement(element, width, height) {
+    element.appendChild(_renderer.domElement);
+    _renderer.setSize(width || element.offsetWidth - 2, height || element.offsetHeight - 2);
+  }
+
   return {
     scene: scene,
     camera: camera,
     gui: gui,
     loader: loader,
-    addOnRenderFunction: addOnRenderFunction
+    addOnRenderFunction: addOnRenderFunction,
+    displayInDomElement: displayInDomElement,
   };
 
 })();

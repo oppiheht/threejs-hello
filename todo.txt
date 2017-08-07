@@ -1,4 +1,5 @@
 better orbit controls
+highlight on mouseover
+better robot geometry
 Selectable robots and racks with highlighting
-Robots move via JS API
 bounding box around racks
