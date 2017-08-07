@@ -18,12 +18,15 @@
   let currentConfig = config['full-testmap-tracks'];
 
   $.ajaxSetup( { "async": false } );
+  let racks = $.getJSON(currentConfig.rackFile).responseJSON;
+  //let totes = $.getJSON(currentConfig.toteFile).responseJSON;
+  let tracks = $.getJSON(currentConfig.trackFile).responseJSON; 
 
   wm3d.displayInDomElement(document.body);
-  wm3d.rackModule.addRacks(currentConfig.rackFile, currentConfig.rackOffset);
+  wm3d.rackModule.addRacks(racks, currentConfig.rackOffset);
   wm3d.warehouseModule.addFloor(currentConfig.warehouseSize, currentConfig.warehouseCornerOffset);
   wm3d.warehouseModule.addPillars(currentConfig.warehouseCornerOffset, currentConfig.pillarSpacing, currentConfig.pillarSize, 5, 5);
   wm3d.robotModule.addTestRobots();
-  wm3d.trackModule.addTracks(currentConfig.trackFile, currentConfig.trackOffset);
+  wm3d.trackModule.addTracks(tracks, currentConfig.trackOffset);
 
 })(wm3d);

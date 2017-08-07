@@ -6,8 +6,7 @@
   let NODE_SIZE = 200;
   let NODE_FIDELITY = 32;
 
-  function addTracks(tracksUrl, offset) {
-    let tracks = $.getJSON(tracksUrl).responseJSON; 
+  function addTracks(tracks, offset) {
     _addNodes(tracks.nodes, offset);
     _addLinks(tracks.links);
   }

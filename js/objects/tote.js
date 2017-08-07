@@ -7,9 +7,8 @@
   toteGeom.applyMatrix( new THREE.Matrix4().makeTranslation( -TOTE_WIDTH / 2, -TOTE_HEIGHT/2, -TOTE_LENGTH / 2));
   let toteMaterial = new THREE.MeshBasicMaterial({color: 0x333333});
 
-  function addTotes(totesUrl, offset) {
+  function addTotes(totes, offset) {
     offset = (typeof offset !== 'undefined') ? offset : {x:0, z:0};
-    let totes = $.getJSON(totesUrl).responseJSON; 
     totes.forEach(function(tote) {
         _addTote(tote, offset);
     });

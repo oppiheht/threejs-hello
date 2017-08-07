@@ -5,8 +5,7 @@
   let SHELF_THICKNESS = 63; //63mm = 2.5in
   let RACK_LEG_THICKNESS = 50; // ~2in
 
-  function addRacks(racksUrl, offset) {
-    let racks = $.getJSON(racksUrl).responseJSON; 
+  function addRacks(racks, offset) {
     offset = (typeof offset !== 'undefined') ? offset : {x:0,y:0,z:0};
 
     let rackTexture = wm3d.loader.load('../../res/wood5.png');
