@@ -3,3 +3,4 @@ highlight on mouseover
 better robot geometry
 Selectable robots and racks with highlighting
 bounding box around racks
+lock regions

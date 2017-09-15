@@ -12,14 +12,20 @@
       trackOffset: {x: 0, z: 0},
       toteFile: 'js/maps/totes.json',
       toteOffset: {x: 81848, z: 0},
+    },
+    'easypost': {
+      warehouseSize: {x: 20000, z: 50000},
+      warehouseCornerOffset: {x: -5000, z: -20000 },
+      rackFile: 'js/maps/easypost.json',
+      rackOffset: {x: 0, z: 0},
     }
   }
 
-  let currentConfig = config['full-testmap-tracks'];
+  let currentConfig = config['easypost'];
 
   $.ajaxSetup( { "async": false } );
   let racks = $.getJSON(currentConfig.rackFile).responseJSON;
-  //let totes = $.getJSON(currentConfig.toteFile).responseJSON;
+  let totes = $.getJSON(currentConfig.toteFile).responseJSON;
   let tracks = $.getJSON(currentConfig.trackFile).responseJSON; 
 
   wm3d.displayInDomElement(document.body);

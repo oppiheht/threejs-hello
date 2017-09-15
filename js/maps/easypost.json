@@ -1,0 +1,2102 @@
+[
+  {
+    "origin": [
+      0,
+      0
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack0",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 0,
+            "location": 0
+          },
+          {
+            "name": 1,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      1016,
+      0
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack1",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 2,
+            "location": 0
+          },
+          {
+            "name": 3,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      2032,
+      0
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack2",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 4,
+            "location": 0
+          },
+          {
+            "name": 5,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      3048,
+      0
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack3",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 6,
+            "location": 0
+          },
+          {
+            "name": 7,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      4064,
+      0
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack4",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 8,
+            "location": 0
+          },
+          {
+            "name": 9,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      5080,
+      0
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack5",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 10,
+            "location": 0
+          },
+          {
+            "name": 11,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      6096,
+      0
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack6",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 12,
+            "location": 0
+          },
+          {
+            "name": 13,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      7112,
+      0
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack7",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 14,
+            "location": 0
+          },
+          {
+            "name": 15,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      8128,
+      0
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack8",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 16,
+            "location": 0
+          },
+          {
+            "name": 17,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      9144,
+      0
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack9",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 18,
+            "location": 0
+          },
+          {
+            "name": 19,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      0,
+      1930.4
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack10",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 0,
+            "location": 0
+          },
+          {
+            "name": 1,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      1016,
+      1930.4
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack11",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 2,
+            "location": 0
+          },
+          {
+            "name": 3,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      2032,
+      1930.4
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack12",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 4,
+            "location": 0
+          },
+          {
+            "name": 5,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      3048,
+      1930.4
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack13",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 6,
+            "location": 0
+          },
+          {
+            "name": 7,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      4064,
+      1930.4
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack14",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 8,
+            "location": 0
+          },
+          {
+            "name": 9,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      5080,
+      1930.4
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack15",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 10,
+            "location": 0
+          },
+          {
+            "name": 11,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      6096,
+      1930.4
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack16",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 12,
+            "location": 0
+          },
+          {
+            "name": 13,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      7112,
+      1930.4
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack17",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 14,
+            "location": 0
+          },
+          {
+            "name": 15,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      8128,
+      1930.4
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack18",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 16,
+            "location": 0
+          },
+          {
+            "name": 17,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      9144,
+      1930.4
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack19",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 18,
+            "location": 0
+          },
+          {
+            "name": 19,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      1016,
+      1117.6000000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack20",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 0,
+            "location": 0
+          },
+          {
+            "name": 1,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      2032,
+      1117.6000000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack21",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 2,
+            "location": 0
+          },
+          {
+            "name": 3,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      3048,
+      1117.6000000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack22",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 4,
+            "location": 0
+          },
+          {
+            "name": 5,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      4064,
+      1117.6000000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack23",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 6,
+            "location": 0
+          },
+          {
+            "name": 7,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      5080,
+      1117.6000000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack24",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 8,
+            "location": 0
+          },
+          {
+            "name": 9,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      6096,
+      1117.6000000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack25",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 10,
+            "location": 0
+          },
+          {
+            "name": 11,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      7112,
+      1117.6000000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack26",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 12,
+            "location": 0
+          },
+          {
+            "name": 13,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      8128,
+      1117.6000000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack27",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 14,
+            "location": 0
+          },
+          {
+            "name": 15,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      9144,
+      1117.6000000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack28",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 16,
+            "location": 0
+          },
+          {
+            "name": 17,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      10160,
+      1117.6000000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack29",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 18,
+            "location": 0
+          },
+          {
+            "name": 19,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      0,
+      3860.8
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack30",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 0,
+            "location": 0
+          },
+          {
+            "name": 1,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      1016,
+      3860.8
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack31",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 2,
+            "location": 0
+          },
+          {
+            "name": 3,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      2032,
+      3860.8
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack32",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 4,
+            "location": 0
+          },
+          {
+            "name": 5,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      3048,
+      3860.8
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack33",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 6,
+            "location": 0
+          },
+          {
+            "name": 7,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      4064,
+      3860.8
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack34",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 8,
+            "location": 0
+          },
+          {
+            "name": 9,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      5080,
+      3860.8
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack35",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 10,
+            "location": 0
+          },
+          {
+            "name": 11,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      6096,
+      3860.8
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack36",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 12,
+            "location": 0
+          },
+          {
+            "name": 13,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      7112,
+      3860.8
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack37",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 14,
+            "location": 0
+          },
+          {
+            "name": 15,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      8128,
+      3860.8
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack38",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 16,
+            "location": 0
+          },
+          {
+            "name": 17,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      9144,
+      3860.8
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack39",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 18,
+            "location": 0
+          },
+          {
+            "name": 19,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      1016,
+      3048
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack40",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 0,
+            "location": 0
+          },
+          {
+            "name": 1,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      2032,
+      3048
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack41",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 2,
+            "location": 0
+          },
+          {
+            "name": 3,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      3048,
+      3048
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack42",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 4,
+            "location": 0
+          },
+          {
+            "name": 5,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      4064,
+      3048
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack43",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 6,
+            "location": 0
+          },
+          {
+            "name": 7,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      5080,
+      3048
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack44",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 8,
+            "location": 0
+          },
+          {
+            "name": 9,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      6096,
+      3048
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack45",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 10,
+            "location": 0
+          },
+          {
+            "name": 11,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      7112,
+      3048
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack46",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 12,
+            "location": 0
+          },
+          {
+            "name": 13,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      8128,
+      3048
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack47",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 14,
+            "location": 0
+          },
+          {
+            "name": 15,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      9144,
+      3048
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack48",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 16,
+            "location": 0
+          },
+          {
+            "name": 17,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      10160,
+      3048
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack49",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 18,
+            "location": 0
+          },
+          {
+            "name": 19,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      0,
+      5791.200000000001
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack50",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 0,
+            "location": 0
+          },
+          {
+            "name": 1,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      1016,
+      5791.200000000001
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack51",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 2,
+            "location": 0
+          },
+          {
+            "name": 3,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      2032,
+      5791.200000000001
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack52",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 4,
+            "location": 0
+          },
+          {
+            "name": 5,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      3048,
+      5791.200000000001
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack53",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 6,
+            "location": 0
+          },
+          {
+            "name": 7,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      4064,
+      5791.200000000001
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack54",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 8,
+            "location": 0
+          },
+          {
+            "name": 9,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      5080,
+      5791.200000000001
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack55",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 10,
+            "location": 0
+          },
+          {
+            "name": 11,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      6096,
+      5791.200000000001
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack56",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 12,
+            "location": 0
+          },
+          {
+            "name": 13,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      7112,
+      5791.200000000001
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack57",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 14,
+            "location": 0
+          },
+          {
+            "name": 15,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      8128,
+      5791.200000000001
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack58",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 16,
+            "location": 0
+          },
+          {
+            "name": 17,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      9144,
+      5791.200000000001
+    ],
+    "function": "shelf",
+    "angle": 0,
+    "name": "rack59",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 18,
+            "location": 0
+          },
+          {
+            "name": 19,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      1016,
+      4978.400000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack60",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 0,
+            "location": 0
+          },
+          {
+            "name": 1,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      2032,
+      4978.400000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack61",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 2,
+            "location": 0
+          },
+          {
+            "name": 3,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      3048,
+      4978.400000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack62",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 4,
+            "location": 0
+          },
+          {
+            "name": 5,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      4064,
+      4978.400000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack63",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 6,
+            "location": 0
+          },
+          {
+            "name": 7,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      5080,
+      4978.400000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack64",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 8,
+            "location": 0
+          },
+          {
+            "name": 9,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      6096,
+      4978.400000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack65",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 10,
+            "location": 0
+          },
+          {
+            "name": 11,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      7112,
+      4978.400000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack66",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 12,
+            "location": 0
+          },
+          {
+            "name": 13,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      8128,
+      4978.400000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack67",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 14,
+            "location": 0
+          },
+          {
+            "name": 15,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      9144,
+      4978.400000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack68",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 16,
+            "location": 0
+          },
+          {
+            "name": 17,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  },
+  {
+    "origin": [
+      10160,
+      4978.400000000001
+    ],
+    "function": "shelf",
+    "angle": -180,
+    "name": "rack69",
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 18,
+            "location": 0
+          },
+          {
+            "name": 19,
+            "location": 1016
+          }
+        ],
+        "height": 0
+      }
+    ],
+    "travelDistance": 700,
+    "depth": 406.4,
+    "length": 1016,
+    "fiducialHeight": 570,
+    "transfers": {},
+    "type": "shelving_unit"
+  }
+]
