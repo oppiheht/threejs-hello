@@ -2098,5 +2098,98 @@
     "fiducialHeight": 570,
     "transfers": {},
     "type": "shelving_unit"
+  }, 
+  {
+    "origin": [
+      8533, 
+      -2251
+    ], 
+    "function": "packstation", 
+    "angle": -90, 
+    "stopPosition": 100, 
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 2076, 
+            "location": 0.0
+          }, 
+          {
+            "name": 2077, 
+            "location": 1000
+          }
+        ], 
+        "height": 0
+      }
+    ], 
+    "travelDistance": 700, 
+    "length": 2000,
+    "depth": 1000, 
+    "fiducialHeight": 570, 
+    "transfers": {}, 
+    "type": "shelving_unit", 
+    "name": "packstation1"
+  },
+  {
+    "origin": [
+      2268, 
+      -2251
+    ], 
+    "function": "packstation", 
+    "angle": -90, 
+    "stopPosition": 100, 
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 2078, 
+            "location": 0.0
+          }, 
+          {
+            "name": 2079, 
+            "location": 1000
+          }
+        ], 
+        "height": 0
+      }
+    ], 
+    "travelDistance": 700, 
+    "length": 2000,
+    "depth": 1000, 
+    "fiducialHeight": 570, 
+    "transfers": {}, 
+    "type": "shelving_unit", 
+    "name": "packstation2"
+  },
+  {
+    "origin": [
+      500, 
+      -9000
+    ], 
+    "function": "packstation", 
+    "angle": 0, 
+    "stopPosition": 1828.8, 
+    "shelves": [
+      {
+        "fiducials": [
+          {
+            "name": 2080, 
+            "location": 0.0
+          }, 
+          {
+            "name": 2081, 
+            "location": 1000
+          }
+        ], 
+        "height": 0
+      }
+    ], 
+    "travelDistance": 700, 
+    "length": 9144,
+    "depth": 1000, 
+    "fiducialHeight": 570, 
+    "transfers": {}, 
+    "type": "shelving_unit", 
+    "name": "packstation3"
   }
 ]

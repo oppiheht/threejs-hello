@@ -2,8 +2,8 @@
 
   let  _nodeIdToMeshMap = {};
 
-  let NODE_HEIGHT = 300;
-  let NODE_SIZE = 200;
+  let NODE_HEIGHT = 200;
+  let NODE_SIZE = 100;
   let NODE_FIDELITY = 32;
 
   function addTracks(tracks, offset) {
@@ -29,8 +29,8 @@
   }
 
 
-  let ARROW_HEAD_LENGTH = 1000;
-  let ARROW_HEAD_WIDTH = 400;
+  let ARROW_HEAD_LENGTH = 500;
+  let ARROW_HEAD_WIDTH = 200;
   function _addLinks(links) {
     links.forEach(function(link) {
       let fromVector = _nodeIdToMeshMap[link.source].position;

@@ -11,7 +11,7 @@
       robot.searchable = true;
       wm3d.scene.add(robot);
       robot.position.set(105000, 300, 1000 * i);
-      robot.name = 'picker-invia-' + (i+1);
+      robot.name = 'picker' + (i+1);
       _robots[robot.name] = robot;
     }
   }
@@ -22,13 +22,14 @@
   }
 
   function _onMercuryLoaded(robotGeom) {
+    robotGeom.rotateY(Math.PI);
     let robotMaterial = new THREE.MeshToonMaterial({color: 0x2194ce, specular: 0x111111});
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 10; i++) {
       let robot = new THREE.Mesh(robotGeom, robotMaterial);
       wm3d.scene.add(robot);
       robot.position.x = 3000;
       robot.position.z = 1000 * i;
-      robot.name = 'picker-invia-' + (i+1);
+      robot.name = 'picker' + (i+1);
       _robots[robot.name] = robot;
     }
   }
@@ -49,7 +50,7 @@
     }
     robot.position.x = x;
     robot.position.z = z;
-    robot.setRotationFromAxisAngle(new THREE.Vector3(0, 1, 0), -angle * Math.PI / 180);
+    robot.setRotationFromAxisAngle(new THREE.Vector3(0, 1, 0), -angle);
   }
 
   wm3d.robotModule = {
