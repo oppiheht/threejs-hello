@@ -22,6 +22,7 @@
   }
 
   function _onMercuryLoaded(robotGeom) {
+    robotGeom.translate(0, 0, -200);
     robotGeom.rotateY(Math.PI);
     let robotMaterial = new THREE.MeshToonMaterial({color: 0x2194ce, specular: 0x111111});
     for (let i = 0; i < 10; i++) {

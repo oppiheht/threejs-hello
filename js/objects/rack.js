@@ -31,7 +31,7 @@
   }
 
   //currently unused now that rack materials are from a texture and all the same color
-  let colorCodes = ['0', '2', '4', '6', '8', 'A', 'C', 'E']
+  let colorCodes = ['0', '2', '4', '6', '8', 'A', 'C', 'E'];
   function _randomColor() {
     let r = colorCodes[Math.floor(colorCodes.length * Math.random())]; 
     let g = colorCodes[Math.floor(colorCodes.length * Math.random())]; 
