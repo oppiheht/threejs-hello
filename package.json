@@ -1,0 +1,9 @@
+{
+    "name": "invia-wm3d",
+    "devDependencies": {
+        "uglify-js-es6": "latest"
+    },
+    "scripts": {
+        "build": "uglifyjs js/lib/three.js js/lib/dat.gui.min.js js/lib/OrbitControls.js js/wm3d.js js/mapmaker/* js/objects/* js/ui/tools/* > wm3d-1.0.0.min.js"
+    }
+}
