@@ -1,4 +1,4 @@
-(function(wm3d) {
+document.addEventListener("DOMContentLoaded", function(event) {
 
   let config = {
     'hollar': {
@@ -30,7 +30,7 @@
   let tracks = $.getJSON(currentConfig.trackFile).responseJSON; 
   let totes = $.getJSON(currentConfig.toteFile).responseJSON;
 
-  wm3d.displayInDomElement(document.body);
+  wm3d.displayInDomElement(document.getElementById("3d-container"), window.innerWidth, window.innerHeight);
   wm3d.rackModule.addRacks(racks, currentConfig.rackOffset);
   wm3d.warehouseModule.addFloor(currentConfig.warehouseSize, currentConfig.warehouseCornerOffset);
   //wm3d.warehouseModule.addPillars(currentConfig.warehouseCornerOffset, currentConfig.pillarSpacing, currentConfig.pillarSize, 5, 5);
@@ -38,7 +38,7 @@
   wm3d.trackModule.addTracks(tracks, currentConfig.trackOffset);
 
   //let robotInterval = setInterval(pollRobotPositions, 500);
-  setTimeout(pollRobotPositions, 10);
+/*  setTimeout(pollRobotPositions, 10);
   let updates = 0;
   let start = new Date();
 
@@ -62,6 +62,5 @@
         }
       }
     }
-  }
-
-})(wm3d);
+  }*/
+});

@@ -10,8 +10,9 @@
   let raycaster = new THREE.Raycaster();
   let mouseVector = new THREE.Vector2();
   function onMouseMove(event) {
-    mouseVector.x = ( event.clientX / window.innerWidth) * 2 - 1;
-    mouseVector.y = - ( event.clientY / window.innerHeight) * 2 + 1;
+    let domElement = wm3d.renderer.domElement;
+    mouseVector.x = ( (event.clientX-domElement.offsetLeft) / domElement.width) * 2 - 1;
+    mouseVector.y = - ( (event.clientY-domElement.offsetTop) / domElement.height) * 2 + 1;
   }
   window.addEventListener('mousemove', onMouseMove, false);
 

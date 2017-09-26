@@ -3,16 +3,22 @@
   // robotName -> Mesh
   let _robots = {};
 
-  function addTestRobots() {
+  function addRobot(name) {
     let robotGeom = new THREE.BoxBufferGeometry(640, 600, 620);
     let robotMaterial = new THREE.MeshBasicMaterial({color: 0x0000ee});
+    robotMaterial.side = THREE.DoubleSide;
+    let robot = new THREE.Mesh(robotGeom, robotMaterial);
+    robot.searchable = true;
+    wm3d.scene.add(robot);
+    robot.name = name;
+    _robots[robot.name] = robot;
+    return robot;
+  }
+
+  function addTestRobots() {
     for (let i = 0; i < 30; i++) {
-      let robot = new THREE.Mesh(robotGeom, robotMaterial);
-      robot.searchable = true;
-      wm3d.scene.add(robot);
+      let robot = addRobot('picker' + i+1);
       robot.position.set(105000, 300, 1000 * i);
-      robot.name = 'picker' + (i+1);
-      _robots[robot.name] = robot;
     }
   }
 
@@ -46,7 +52,7 @@
   function setRobotPosition(robotName, x, z, angle) {
     let robot = _robots[robotName];
     if (!robot) {
-      console.error('no robot named "'+robotName+'" to set position on.');
+      robot = addRobot(robotName);
       return;
     }
     robot.position.x = x;
@@ -55,6 +61,7 @@
   }
 
   wm3d.robotModule = {
+    addRobot: addRobot,
     addTestRobots: addTestRobots,
     addMercuryRobots: addMercuryRobots,
     setRobotPosition: setRobotPosition,
