@@ -10,6 +10,7 @@
     let robot = new THREE.Mesh(robotGeom, robotMaterial);
     robot.searchable = true;
     wm3d.scene.add(robot);
+    robot.position.set(0, 300, 0);
     robot.name = name;
     _robots[robot.name] = robot;
     return robot;
