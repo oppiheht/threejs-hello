@@ -33,34 +33,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   wm3d.displayInDomElement(document.getElementById("3d-container"), window.innerWidth, window.innerHeight);
   wm3d.rackModule.addRacks(racks, currentConfig.rackOffset);
   wm3d.warehouseModule.addFloor(currentConfig.warehouseSize, currentConfig.warehouseCornerOffset);
-  //wm3d.warehouseModule.addPillars(currentConfig.warehouseCornerOffset, currentConfig.pillarSpacing, currentConfig.pillarSize, 5, 5);
-  wm3d.robotModule.addMercuryRobots();
+  if (currentConfig.pillarSpacing && currentConfig.pillarSize) {
+    wm3d.warehouseModule.addPillars(currentConfig.warehouseCornerOffset, currentConfig.pillarSpacing, currentConfig.pillarSize, 5, 5);
+  }
+  wm3d.robotModule.addTestRobots();
   wm3d.trackModule.addTracks(tracks, currentConfig.trackOffset);
-
-  //let robotInterval = setInterval(pollRobotPositions, 500);
-/*  setTimeout(pollRobotPositions, 10);
-  let updates = 0;
-  let start = new Date();
-
-  function pollRobotPositions() {
-    let xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "http://sim-easypost-rms/api/v2/robots", true);
-    xhttp.send();
-    xhttp.onreadystatechange = function() {
-      if (xhttp.readyState == 4) {
-        if (xhttp.status != 200) {
-          //clearInterval(robotInterval);
-        } else {
-          let robots = JSON.parse(xhttp.responseText);
-          robots.forEach((robot) => {
-            wm3d.robotModule.setRobotPosition(robot.name, robot.x, robot.y, robot.angle);
-          });
-          updates++;
-          seconds = (new Date() - start) / 1000
-          console.log(updates / seconds);
-          setTimeout(pollRobotPositions, 10);
-        }
-      }
-    }
-  }*/
 });
