@@ -13,8 +13,11 @@
     _input = document.createElement('input');
     _input.style.position = 'absolute';
     document.body.appendChild(_input);
-    _input.style.top = window.innerHeight / 10 + 'px';
-    _input.style.left = (window.innerWidth - _input.scrollWidth) / 2 + 'px';
+
+    let container = wm3d.renderer.domElement;
+    _input.style.top = (container.offsetHeight / 10) + container.offsetTop + 'px';
+    _input.style.left = (container.offsetWidth - _input.scrollWidth) / 2 + container.offsetLeft + 'px';
+
     _input.focus();
     _input.addEventListener('keydown', _keyDown);
   }
