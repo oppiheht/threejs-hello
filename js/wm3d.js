@@ -36,6 +36,7 @@ var wm3d = (function() {
   scene.add(new THREE.AmbientLight(0xffffff, .5));
 
   let gui = new dat.GUI();
+  gui.domElement.hidden = true;
 
   let _onRenderFunctions = [];
   function addOnRenderFunction(fn) {
@@ -58,6 +59,7 @@ var wm3d = (function() {
     renderer.setSize(w, h);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
+    gui.domElement.hidden = false;
   }
 
   return {
