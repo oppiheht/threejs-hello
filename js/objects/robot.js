@@ -8,6 +8,14 @@
     let robotMaterial = new THREE.MeshBasicMaterial({color: 0x0000ee});
     robotMaterial.side = THREE.DoubleSide;
     let robot = new THREE.Mesh(robotGeom, robotMaterial);
+
+    let robotNameplate = new THREE.Group();
+    let robotNameplateSprite = new THREE.TextSprite({textSize: 300, texture: { text: name }});
+    robotNameplate.position.set(0, 600, 0);
+    robotNameplate.scale.x = -1;
+    robotNameplate.add(robotNameplateSprite);
+    robot.add(robotNameplate);
+
     robot.searchable = true;
     wm3d.scene.add(robot);
     robot.position.set(0, 300, 0);
@@ -18,8 +26,8 @@
 
   function addTestRobots() {
     for (let i = 0; i < 30; i++) {
-      let robot = addRobot('picker' + i+1);
-      robot.position.set(105000, 300, 1000 * i);
+      let robot = addRobot('picker' + (i+1));
+      robot.position.set(-1000, 300, 1000 * i);
     }
   }
 
