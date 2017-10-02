@@ -2,6 +2,7 @@
 
   // robotName -> Mesh
   let _robots = {};
+  let _selectedRobot = null;
 
   function addRobot(name) {
     let robotGeom = new THREE.BoxBufferGeometry(640, 600, 620);
@@ -11,7 +12,7 @@
 
     let robotNameplate = new THREE.Group();
     let robotNameplateSprite = new THREE.TextSprite({textSize: 300, texture: { text: name }});
-    robotNameplate.position.set(0, 600, 0);
+    robotNameplate.position.set(0, 2000, 0);
     robotNameplate.scale.x = -1;
     robotNameplate.add(robotNameplateSprite);
     robot.add(robotNameplate);
@@ -75,8 +76,9 @@
       return;
     }
     if (isErrored) {
-      robot.material.color.set(0xee0000);
       if (!robot.lightBeam) {
+        robot.material.color.set(0xee0000);
+
         let cylinderGeom = new THREE.CylinderGeometry(600, 600, 10000, 32, 8, 1, false);
         cylinderGeom.openEnded = true;
         cylinderGeom.translate(0, 5000 - 300, 0);
@@ -89,14 +91,45 @@
         robot.lightBeam = lightBeam;
         wm3d.scene.add(lightBeam);
       }
-    } else {
-        if (robot.lightBeam) {
-          wm3d.scene.remove(robot.lightBeam);
-          robot.lightBeam = null;
-        }
-        robot.material.color.set(0x0000ee);
+    } else if (robot.lightBeam) {
+      wm3d.scene.remove(robot.lightBeam);
+      robot.lightBeam = null;
+
+      robot.material.color.set(0x0000ee);
     }
-    
+  }
+
+  function selectRobot(robotName) {
+    let robot = _robots[robotName];
+
+    //pass if re-selecting the same robot
+    if (robotName != null && robot != null && _selectedRobot != null && robot.name == _selectedRobot.name) {
+      return;
+    }
+
+    //deselect current if it exists
+    if (_selectedRobot != null && _selectedRobot.arrow) {
+      wm3d.scene.remove(_selectedRobot.arrow);
+      _selectedRobot.arrow = null;
+      _selectedRobot = null;
+    }
+
+    //select the new robot
+    if (robot) {
+      _selectedRobot = robot;
+      let direction = new THREE.Vector3(0, -1, 0);
+      let origin = new THREE.Vector3(0, 2000, 0);
+      let arrowMesh = new THREE.ArrowHelper(direction, origin, 1000, 0x0000ff, 200, 50);
+      arrowMesh.cone.material = new THREE.MeshPhongMaterial({color: 0x00cc00, specular: 0xcccccc});
+      arrowMesh.cone.material.side = THREE.DoubleSide;
+      arrowMesh.line.material = new THREE.MeshPhongMaterial({color: 0x00cc00, specular: 0xcccccc});
+
+      let arrow = new THREE.Group();
+      arrow.add(arrowMesh);
+      arrow.position.copy(robot.position);
+      robot.arrow = arrow;
+      wm3d.scene.add(arrow);
+    }
   }
 
   wm3d.robotModule = {
@@ -105,6 +138,7 @@
     addMercuryRobots: addMercuryRobots,
     setRobotPosition: setRobotPosition,
     setRobotErrored: setRobotErrored,
+    selectRobot: selectRobot,
   };
 
 })(wm3d);
