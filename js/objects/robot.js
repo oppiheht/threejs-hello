@@ -5,7 +5,7 @@
 
   function addRobot(name) {
     let robotGeom = new THREE.BoxBufferGeometry(640, 600, 620);
-    let robotMaterial = new THREE.MeshBasicMaterial({color: 0x0000ee});
+    let robotMaterial = new THREE.MeshToonMaterial({color: 0x0000ee, specular: 0x111111});
     robotMaterial.side = THREE.DoubleSide;
     let robot = new THREE.Mesh(robotGeom, robotMaterial);
 
@@ -62,11 +62,41 @@
     let robot = _robots[robotName];
     if (!robot) {
       robot = addRobot(robotName);
-      return;
     }
     robot.position.x = x;
     robot.position.z = z;
     robot.setRotationFromAxisAngle(new THREE.Vector3(0, 1, 0), -angle);
+  }
+
+  function setRobotErrored(robotName, isErrored) {
+    let robot = _robots[robotName];
+    if (!robot) {
+      console.error("No robot: " + robotName + " exists to setRobotErrored on");
+      return;
+    }
+    if (isErrored) {
+      robot.material.color.set(0xee0000);
+      if (!robot.lightBeam) {
+        let cylinderGeom = new THREE.CylinderGeometry(600, 600, 10000, 32, 8, 1, false);
+        cylinderGeom.openEnded = true;
+        cylinderGeom.translate(0, 5000 - 300, 0);
+        let lightBeamMaterial = new THREE.MeshLambertMaterial({color: 0xcc0000, depthWrite: false});
+        lightBeamMaterial.side = THREE.DoubleSide;
+        lightBeamMaterial.transparent = true;
+        lightBeamMaterial.opacity = .1;
+        let lightBeam = new THREE.Mesh(cylinderGeom, lightBeamMaterial);
+        lightBeam.position.copy(robot.position);
+        robot.lightBeam = lightBeam;
+        wm3d.scene.add(lightBeam);
+      }
+    } else {
+        if (robot.lightBeam) {
+          wm3d.scene.remove(robot.lightBeam);
+          robot.lightBeam = null;
+        }
+        robot.material.color.set(0x0000ee);
+    }
+    
   }
 
   wm3d.robotModule = {
@@ -74,6 +104,7 @@
     addTestRobots: addTestRobots,
     addMercuryRobots: addMercuryRobots,
     setRobotPosition: setRobotPosition,
+    setRobotErrored: setRobotErrored,
   };
 
 })(wm3d);
