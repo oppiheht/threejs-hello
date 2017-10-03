@@ -119,6 +119,7 @@
     //deselect current if it exists
     if (_selectedRobot != null && _selectedRobot.selectedMesh) {
       _selectedRobot.remove(_selectedRobot.selectedMesh);
+      wm3d.scene.remove(_selectedRobot.selectedMesh);
       _selectedRobot.selectedMesh = null;
       _selectedRobot = null;
     }
