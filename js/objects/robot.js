@@ -76,27 +76,30 @@
       return;
     }
     if (isErrored) {
-      if (!robot.lightBeam) {
+      if (!robot.errorMesh) {
         robot.material.color.set(0xee0000);
-
-        let cylinderGeom = new THREE.CylinderGeometry(600, 600, 10000, 32, 8, 1, false);
-        cylinderGeom.openEnded = true;
-        cylinderGeom.translate(0, 5000 - 300, 0);
-        let lightBeamMaterial = new THREE.MeshLambertMaterial({color: 0xcc0000, depthWrite: false});
-        lightBeamMaterial.side = THREE.DoubleSide;
-        lightBeamMaterial.transparent = true;
-        lightBeamMaterial.opacity = .1;
-        let lightBeam = new THREE.Mesh(cylinderGeom, lightBeamMaterial);
+        let lightBeam = _makeLightBeam(0xcc0000);
         lightBeam.position.copy(robot.position);
-        robot.lightBeam = lightBeam;
+        robot.errorMesh = lightBeam;
         wm3d.scene.add(lightBeam);
       }
-    } else if (robot.lightBeam) {
-      wm3d.scene.remove(robot.lightBeam);
-      robot.lightBeam = null;
-
+    } else if (robot.errorMesh) {
+      wm3d.scene.remove(robot.errorMesh);
+      robot.errorMesh = null;
       robot.material.color.set(0x0000ee);
     }
+  }
+
+  function _makeLightBeam(color) {
+    let cylinderGeom = new THREE.CylinderGeometry(600, 600, 10000, 32, 8, 1, false);
+    cylinderGeom.openEnded = true;
+    cylinderGeom.translate(0, 5000 - 300, 0);
+    let lightBeamMaterial = new THREE.MeshLambertMaterial({color: color, depthWrite: false});
+    lightBeamMaterial.side = THREE.DoubleSide;
+    lightBeamMaterial.transparent = true;
+    lightBeamMaterial.opacity = .1;
+    let lightBeam = new THREE.Mesh(cylinderGeom, lightBeamMaterial);
+    return lightBeam;
   }
 
   function selectRobot(robotName) {
@@ -108,27 +111,22 @@
     }
 
     //deselect current if it exists
-    if (_selectedRobot != null && _selectedRobot.arrow) {
-      wm3d.scene.remove(_selectedRobot.arrow);
-      _selectedRobot.arrow = null;
+    if (_selectedRobot != null && _selectedRobot.selectedMesh) {
+      wm3d.scene.remove(_selectedRobot.selectedMesh);
+      _selectedRobot.selectedMesh = null;
       _selectedRobot = null;
     }
 
     //select the new robot
     if (robot) {
       _selectedRobot = robot;
-      let direction = new THREE.Vector3(0, -1, 0);
-      let origin = new THREE.Vector3(0, 2000, 0);
-      let arrowMesh = new THREE.ArrowHelper(direction, origin, 1000, 0x0000ff, 200, 50);
-      arrowMesh.cone.material = new THREE.MeshPhongMaterial({color: 0x00cc00, specular: 0xcccccc});
-      arrowMesh.cone.material.side = THREE.DoubleSide;
-      arrowMesh.line.material = new THREE.MeshPhongMaterial({color: 0x00cc00, specular: 0xcccccc});
-
-      let arrow = new THREE.Group();
-      arrow.add(arrowMesh);
-      arrow.position.copy(robot.position);
-      robot.arrow = arrow;
-      wm3d.scene.add(arrow);
+      let lightBeam = _makeLightBeam(0x0000cc);
+      lightBeam.position.copy(robot.position);
+      robot.selectedMesh = lightBeam;
+      wm3d.scene.add(lightBeam);
+      lightBeam.position.copy(robot.position);
+      robot.selectedMesh = lightBeam;
+      wm3d.scene.add(lightBeam);
     }
   }
 
