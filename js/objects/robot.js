@@ -66,6 +66,12 @@
     }
     robot.position.x = x;
     robot.position.z = z;
+    if (robot.errorMesh) {
+      robot.errorMesh.position.copy(robot.position);
+    }
+    if (robot.selectedMesh) {
+      robot.selectedMesh.position.copy(robot.position);
+    }
     robot.setRotationFromAxisAngle(new THREE.Vector3(0, 1, 0), -angle);
   }
 
@@ -112,7 +118,7 @@
 
     //deselect current if it exists
     if (_selectedRobot != null && _selectedRobot.selectedMesh) {
-      wm3d.scene.remove(_selectedRobot.selectedMesh);
+      _selectedRobot.remove(_selectedRobot.selectedMesh);
       _selectedRobot.selectedMesh = null;
       _selectedRobot = null;
     }
@@ -122,9 +128,7 @@
       _selectedRobot = robot;
       let lightBeam = _makeLightBeam(0x0000cc);
       lightBeam.position.copy(robot.position);
-      robot.selectedMesh = lightBeam;
-      wm3d.scene.add(lightBeam);
-      lightBeam.position.copy(robot.position);
+      robot.add(lightBeam);
       robot.selectedMesh = lightBeam;
       wm3d.scene.add(lightBeam);
     }
