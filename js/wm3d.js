@@ -8,12 +8,8 @@ var wm3d = (function() {
 
   let _controls = null;
 
-  _controls = new THREE.OrbitControls(camera, document.body);
-  _controls.keys = {LEFT: 65, UP: 87, RIGHT: 68, BOTTOM: 83}
-  _controls.keyPanSpeed = 30;
-
   const _savedCamera = JSON.parse(localStorage.getItem('savedCamera'));
-  if (_savedCamera) {
+  if (_savedCamera && _controls) {
     camera.position.copy(_savedCamera.cameraPosition);
     _controls.target.copy(_savedCamera.targetPosition);
   }
@@ -24,10 +20,12 @@ var wm3d = (function() {
   camera.updateProjectionMatrix();
 
   window.addEventListener('unload', () => {
-    localStorage._savedCamera = JSON.stringify({
-      cameraPosition: camera.position,
-      targetPosition: _controls.target,
-    })
+    if (_controls) {
+      localStorage._savedCamera = JSON.stringify({
+        cameraPosition: camera.position,
+        targetPosition: _controls.target,
+      })
+    }
   });
 
   let directionalLight = new THREE.DirectionalLight(0xffffff, .5);
@@ -45,7 +43,9 @@ var wm3d = (function() {
 
   let _render = function () {
     requestAnimationFrame(_render);
-    _controls.update();
+    if (_controls) {
+      _controls.update();
+    }
     renderer.render(scene, camera);
     
     _onRenderFunctions.forEach((fn) => fn.call());
@@ -53,6 +53,9 @@ var wm3d = (function() {
   _render();
   
   function displayInDomElement(element, width, height) {
+    _controls = new THREE.OrbitControls(camera, element);
+    _controls.keys = {LEFT: 65, UP: 87, RIGHT: 68, BOTTOM: 83}
+    _controls.keyPanSpeed = 30;
     element.appendChild(renderer.domElement);
     let w = width || element.offsetWidth - 2;
     let h = height || element.offsetHeight - 2;
